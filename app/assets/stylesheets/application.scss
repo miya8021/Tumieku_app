@@ -17,3 +17,10 @@
 .mw-md {
   max-width: 576px;
 }
+// フラッシュ用スタイル
+.alert-notice {
+  @extend .alert-info;
+}
+.alert-alert {
+  @extend .alert-danger;
+}
