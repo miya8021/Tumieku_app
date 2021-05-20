@@ -1,24 +1,13 @@
-# README
+# GitHub 運用方法
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+ブランチ運用
+| ブランチ名 | 本番用 | 備考 |
+| ---------- | ------------- |------------- |
+| master   | 本番用  | 本番リリース用のブランチ|
+| develop  | 開発用  | 機能実装用のブランチはここから切る|
+| feature  | 機能実装用  | 派生元は develop ブランチ|
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# タスク管理
+- 実務でのチーム開発を想定した開発方式
+  - Projects のカンバン方式でタスクを管理
+  - 実装・修正を行う際は全て issue に登録し、PR してマージする。
