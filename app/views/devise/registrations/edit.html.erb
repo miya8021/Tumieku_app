@@ -34,6 +34,7 @@
   
   <div class="form-group">
     <%= f.label :profile_image %><br/>
+    <%= image_tag @user.profile_image.url if @user.profile_image? %>
     <%= f.file_field :profile_image %>
   </div>
 
