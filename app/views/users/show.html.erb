@@ -3,4 +3,6 @@
 <p>MyPage <%= @user.name %></p>
 <% if @user.profile_image? %>
   <%= image_tag @user.profile_image.url %>
+<% else %>
+  <%= image_tag("default.png") %>
 <% end %>
