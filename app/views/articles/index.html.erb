@@ -1,0 +1,17 @@
+<h1>投稿一覧</h1>
+<table>
+  <tbody>
+    <% @articles.each do |article| %>
+      <tr>
+        <td>名前 <%= article.user.name %></td>
+        <td>時間 <%= article.minutes %></td>
+        <td>感想 <%= article.body %></td>
+        <td>
+          <%= link_to "詳細", article %>
+          <%= link_to "編集", edit_article_path(article) %>
+          <%= link_to "削除", article_path(article), method: :delete, data: { confirm: "削除しますか？" } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

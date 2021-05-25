@@ -1,8 +1,12 @@
 <h1>今日のTumiekuをつぶやこう！</h1>
-<%= form_with model: @artice, local: true do |form| %>
+<%= form_with model: @article, local: true do |form| %>
   <div>
     <%= form.label :day, "日付" %>
     <%= form.date_field :day %>
+  </div>
+  <div>
+    <%= form.label :minutes, "時間（分）" %>
+    <%= form.number_field :minutes %>
   </div>
   <div>
     <%= form.label :body, "感想" %>
