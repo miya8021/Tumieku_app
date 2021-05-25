@@ -1,6 +1,7 @@
 <h1>Users#show</h1>
 <p>Find me in app/views/users/show.html.erb</p>
 <p>MyPage <%= @user.name %></p>
+<p>目標 「<%= @user.objective %>」</p>
 <% if @user.profile_image? %>
   <%= image_tag @user.profile_image.url %>
 <% else %>

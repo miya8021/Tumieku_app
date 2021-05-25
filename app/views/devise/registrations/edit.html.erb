@@ -31,7 +31,12 @@
 
     <small class="form-text text-muted"><%= t('.we_need_your_current_password_to_confirm_your_changes') %></small>
   </div>
-  
+
+  <div class="form-group">
+    <%= f.label :objective %><br/>
+    <%= f.text_area :objective, autofocus: true, class: 'form-control', rows: "3" %>
+  </div>
+
   <div class="form-group">
     <%= f.label :profile_image %><br/>
     <%= image_tag @user.profile_image.url if @user.profile_image? %>
