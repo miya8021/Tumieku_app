@@ -2,3 +2,10 @@
 <p>日付 <%= @article.day %></p>
 <p>時間 <%= @article.minutes %></p>
 <p>感想 <%= @article.body %></p>
+<p>
+  <% if current_user.id == @article.user_id %>
+    <%= link_to "編集", edit_article_path(@article) %>
+    <%= link_to "削除", article_path(@article), method: :delete, data: { confirm: "削除しますか？" } %>
+  <% end %>
+</p>
+<p><%= link_to "みんなのTmiekuへ", articles_path %></p>
