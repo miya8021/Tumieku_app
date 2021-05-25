@@ -3,9 +3,14 @@ class ArticesController < ApplicationController
   end
 
   def new
+    @artice = Artice.new
   end
 
   def create
+    @artice = Artice.new(artice_params)
+    @artice.user_id = current_user.id
+    @artice.save
+    redirect_to artices
   end
 
   def show
@@ -18,5 +23,11 @@ class ArticesController < ApplicationController
   end
 
   def destroy
+  end
+
+  private
+
+  def artice_params
+    params.require(:artice).permit(:day, :minutes, :body)
   end
 end

@@ -1,2 +1,14 @@
-<h1>Artices#new</h1>
-<p>Find me in app/views/artices/new.html.erb</p>
+<h1>今日のTumiekuをつぶやこう！</h1>
+<%= form_with model: @artice, local: true do |form| %>
+  <div>
+    <%= form.label :day, "日付" %>
+    <%= form.date_field :sample_at %>
+  </div>
+  <div>
+    <%= form.label :body, "内容" %>
+    <%= form.text_area :body %>
+  </div>
+  <div>
+    <%= form.submit "投稿" %>
+  </div>
+<% end %>
