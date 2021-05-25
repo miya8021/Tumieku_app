@@ -10,10 +10,11 @@ class ArticesController < ApplicationController
     @artice = Artice.new(artice_params)
     @artice.user_id = current_user.id
     @artice.save
-    redirect_to artices
+    redirect_to artices_path
   end
 
   def show
+    @artice = Artice.find(params[:id])
   end
 
   def edit
