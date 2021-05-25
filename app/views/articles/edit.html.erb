@@ -1,0 +1,17 @@
+<%= form_with model: @article, local: true do |form| %>
+  <div>
+    <%= form.label :day, "日付" %>
+    <%= form.date_field :day %>
+  </div>
+  <div>
+    <%= form.label :minutes, "時間（分）" %>
+    <%= form.number_field :minutes %>
+  </div>
+  <div>
+    <%= form.label :body, "感想" %>
+    <%= form.text_area :body %>
+  </div>
+  <div>
+    <%= form.submit "投稿" %>
+  </div>
+<% end %>
