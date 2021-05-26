@@ -1,9 +1,6 @@
 class ExercisesController < ApplicationController
   def index
-  end
-
-  def show
-    @exercise = Exercise.find(params[:id])
+    @exercises = Exercise.order(id: :asc)
   end
 
   def new
