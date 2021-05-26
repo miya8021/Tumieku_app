@@ -1,4 +1,5 @@
 class ExercisesController < ApplicationController
+
   def index
     @exercises = Exercise.order(id: :asc)
   end
@@ -21,6 +22,9 @@ class ExercisesController < ApplicationController
   end
 
   def destroy
+    exercise = Exercise.find(params[:id])
+    exercise.destroy!
+    redirect_to exercises_path
   end
 
   private

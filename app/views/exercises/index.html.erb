@@ -5,10 +5,9 @@
       <tr>
         <td>運動 <%= exercise.name %></td>
         <td>
-          <% if current_user.id == exercise.user_id %>
-            <%= link_to "編集", edit_exercise_path(exercise) %>
-            <%= link_to "削除", exercise_path(exercises), method: :delete, data: { confirm: "削除しますか？" } %>
-          <% end %>
+          <%= link_to "編集", edit_exercise_path(exercise) %>
+          <%= link_to "削除", exercise_path(exercise), method: :delete, data: { confirm: "削除しますか？" } %>
+          <%= link_to "エクササイズ登録へ", new_exercise_path %>
         </td>
       </tr>
     <% end %>
