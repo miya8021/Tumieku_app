@@ -1,0 +1,15 @@
+<h1>登録エクササイズ一覧</h1>
+<table>
+  <tbody>
+    <% @exercises.each do |exercise| %>
+      <tr>
+        <td>運動 <%= exercise.name %></td>
+        <td>
+          <%= link_to "編集", edit_exercise_path(exercise) %>
+          <%= link_to "削除", exercise_path(exercise), method: :delete, data: { confirm: "削除しますか？" } %>
+          <%= link_to "エクササイズ登録へ", new_exercise_path %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
