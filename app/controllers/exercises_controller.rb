@@ -1,12 +1,13 @@
 class ExercisesController < ApplicationController
   def index
-    @exercise = Exercise.new
   end
 
   def show
+    @exercise = Exercise.find(params[:id])
   end
 
   def new
+    @exercise = Exercise.new
   end
 
   def create
