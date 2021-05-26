@@ -14,7 +14,7 @@ class ExercisesController < ApplicationController
     exercise = Exercise.new(exercise_params)
     exercise.user_id = current_user.id
     exercise.save
-    redirect_to exercise_path
+    redirect_to exercises_path
   end
 
   def edit
@@ -29,6 +29,6 @@ class ExercisesController < ApplicationController
   private
 
   def exercise_params
-    params.require(:exercise).permit(:type)
+    params.require(:exercise).permit(:name)
   end
 end

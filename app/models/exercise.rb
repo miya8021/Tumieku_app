@@ -1,4 +1,4 @@
 class Exercise < ApplicationRecord
   belongs_to :user
-  validates :type, presence: true
+  validates :name, presence: true
 end
