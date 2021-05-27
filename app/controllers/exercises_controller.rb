@@ -11,16 +11,25 @@ class ExercisesController < ApplicationController
   end
 
   def create
-    exercise = current_user.exercises.create!(exercise_params)
-    redirect_to exercises_path, notice: "登録しました"
+    @exercise = Exercise.new(exercise_params)
+    if @exercise.save
+      redirect_to exercises_path, notice: "登録しました"
+    else
+      flash.now[:alert] = "登録に失敗しました"
+      render :new
+    end
   end
 
   def edit
   end
 
   def update
-    @exercise.update!(exercise_params)
-    redirect_to exercises_path, notice: '更新しました'
+    if @exercise.update(exercise_params)
+      redirect_to exercises_path, notice: '更新しました'
+    else
+      flash.now[:alert] = '更新に失敗しました'
+      render :edit
+    end
   end
 
   def destroy
