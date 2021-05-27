@@ -1,5 +1,7 @@
 class ExercisesController < ApplicationController
 
+  before_action :set_exercise, only: %i[edit update destroy]
+
   def index
     @exercises = Exercise.order(id: :asc)
   end
@@ -16,18 +18,15 @@ class ExercisesController < ApplicationController
   end
 
   def edit
-    @exercise = Exercise.find(params[:id])
   end
 
   def update
-    exercise = Exercise.find(params[:id])
-    exercise.update!(exercise_params)
+    @exercise.update!(exercise_params)
     redirect_to exercises_path
   end
 
   def destroy
-    exercise = Exercise.find(params[:id])
-    exercise.destroy!
+    @exercise.destroy!
     redirect_to exercises_path
   end
 
@@ -35,5 +34,9 @@ class ExercisesController < ApplicationController
 
   def exercise_params
     params.require(:exercise).permit(:name)
+  end
+
+  def set_exercise
+    @exercise = Exercise.find(params[:id])
   end
 end
