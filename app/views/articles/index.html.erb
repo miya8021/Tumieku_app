@@ -4,7 +4,8 @@
     <% @articles.each do |article| %>
       <tr>
         <td>名前 <%= article.user.name %></td>
-        <td>時間 <%= article.minutes %></td>
+        <td>エクササイズ <%= article.exercise.name %></td>
+        <td><%= article.minutes %>分</td>
         <td>感想 <%= article.body %></td>
         <td>
           <%= link_to "詳細", article %>

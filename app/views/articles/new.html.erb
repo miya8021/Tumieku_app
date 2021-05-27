@@ -5,6 +5,8 @@
     <%= form.date_field :day %>
   </div>
   <div>
+    <%= form.label :exercise_id, "エクササイズ" %>
+    <%= form.collection_select :exercise_id, Exercise.all, :id, :name %>
     <%= form.label :minutes, "時間（分）" %>
     <%= form.number_field :minutes %>
   </div>
