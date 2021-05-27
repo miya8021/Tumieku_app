@@ -1,6 +1,7 @@
 <h1>投稿詳細</h1>
 <p>日付 <%= @article.day %></p>
-<p>時間 <%= @article.minutes %></p>
+<p>エクササイズ <%= @article.exercise.name %></p>
+<p><%= @article.minutes %>分</p>
 <p>感想 <%= @article.body %></p>
 <p>
   <% if current_user.id == @article.user_id %>
