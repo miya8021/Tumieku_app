@@ -1,12 +1,2 @@
 <h1>登録エクササイズ編集</h1>
-<%= form_with model: @exercise, local: true do |form| %>
-  <div>
-    <%= form.label :name, "種類" %>
-    <%= form.text_field :name %>
-  </div>
-  <div>
-    <%= form.submit "登録" %>
-  </div>
-<% end %>
-<%= link_to "エクササイズ登録へ", new_exercise_path %>
-<%= link_to "登録エクササイズ一覧へ", exercises_path %>
+<%= render "form", button_value: "更新" %>
