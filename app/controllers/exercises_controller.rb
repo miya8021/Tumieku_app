@@ -11,10 +11,8 @@ class ExercisesController < ApplicationController
   end
 
   def create
-    exercise = Exercise.new(exercise_params)
-    exercise.user_id = current_user.id
-    exercise.save
-    redirect_to exercises_path
+    exercise = current_user.exercises.create!(exercise_params)
+    redirect_to exercises_path, notice: "登録しました"
   end
 
   def edit
@@ -22,12 +20,12 @@ class ExercisesController < ApplicationController
 
   def update
     @exercise.update!(exercise_params)
-    redirect_to exercises_path
+    redirect_to exercises_path, notice: '更新しました'
   end
 
   def destroy
     @exercise.destroy!
-    redirect_to exercises_path
+    redirect_to exercises_path, alert: '削除しました'
   end
 
   private
