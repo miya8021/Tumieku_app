@@ -11,7 +11,7 @@ class ExercisesController < ApplicationController
   end
 
   def create
-    @exercise = Exercise.new(exercise_params)
+    @exercise = current_user.exercises.new(exercise_params)
     if @exercise.save
       redirect_to exercises_path, notice: "登録しました"
     else
