@@ -4,6 +4,7 @@ ja:
     models:
       exercise: エクササイズ
       article: 投稿
+      like: いいね
     attributes:
       exercise:
         name: エクササイズ名
@@ -12,6 +13,9 @@ ja:
         exercise_id: エクササイズ
         minutes: 分
         body: 感想
+      like:
+        user: ユーザー
+        article: 投稿
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'
