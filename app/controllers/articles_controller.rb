@@ -10,8 +10,13 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    article = current_user.articles.create!(article_params)
-    redirect_to articles_path, notice: '投稿しました'
+    @article = current_user.articles.new(article_params)
+    if @article.save
+      redirect_to articles_path, notice: '投稿しました'
+    else
+      flash.now[:alert] = '投稿に失敗しました'
+      render :new
+    end
   end
 
   def show
@@ -21,8 +26,12 @@ class ArticlesController < ApplicationController
   end
 
   def update
-    @article.update!(article_params)
-    redirect_to articles_path, notice: '更新しました'
+    if @article.update(article_params)
+      redirect_to articles_path, notice: '更新しました'
+    else
+      flash.now[:alert] = "更新に失敗しました"
+      render :edit
+    end
   end
 
   def destroy
