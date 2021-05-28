@@ -1,16 +1,16 @@
 <%= form_with model: @article, local: true do |form| %>
   <div>
-    <%= form.label :day, "日付" %>
+    <%= form.label :day %>
     <%= form.date_field :day %>
   </div>
   <div>
-    <%= form.label :exercise_id, "エクササイズ" %>
+    <%= form.label :exercise_id %>
     <%= form.collection_select :exercise_id, Exercise.all, :id, :name %>
-    <%= form.label :minutes, "時間（分）" %>
-    <%= form.number_field :minutes %>
+    <%= form.number_field :minutes, min: "0" %>
+    <%= form.label :minutes %>
   </div>
   <div>
-    <%= form.label :body, "感想" %>
+    <%= form.label :body %>
     <%= form.text_area :body %>
   </div>
   <div>

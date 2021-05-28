@@ -3,9 +3,15 @@ ja:
   activerecord:
     models:
       exercise: エクササイズ
+      article: 投稿
     attributes:
       exercise:
         name: エクササイズ名
+      article:
+        day: 日付
+        exercise_id: エクササイズ
+        minutes: 分
+        body: 感想
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'
