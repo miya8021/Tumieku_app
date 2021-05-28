@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  before_action :set_article, only: [:edit, :update, :destroy]
+  before_action :set_article, only: %i[show edit update destroy]
 
   def index
     @articles = Article.order(:created_at)
@@ -17,16 +17,13 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    @article = Article.find(params[:id])
   end
 
   def edit
-    @article = Article.find(params[:id])
   end
 
   def update
-    article = Article.find(params[:id])
-    article.update!(article_params)
+    @article.update!(article_params)
     redirect_to articles_path
   end
 
@@ -37,11 +34,11 @@ class ArticlesController < ApplicationController
 
   private
 
-  def article_params
-    params.require(:article).permit(:day, :minutes, :body, :exercise_id)
-  end
-
   def set_article
     @article = current_user.articles.find(params[:id])
+  end
+
+  def article_params
+    params.require(:article).permit(:day, :minutes, :body, :exercise_id)
   end
 end
