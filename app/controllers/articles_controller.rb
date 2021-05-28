@@ -10,10 +10,8 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    article = Article.new(article_params)
-    article.user_id = current_user.id
-    article.save
-    redirect_to articles_path
+    article = current_user.articles.create!(article_params)
+    redirect_to articles_path, notice: '投稿しました'
   end
 
   def show
@@ -24,12 +22,12 @@ class ArticlesController < ApplicationController
 
   def update
     @article.update!(article_params)
-    redirect_to articles_path
+    redirect_to articles_path, notice: '更新しました'
   end
 
   def destroy
     @article.destroy!
-    redirect_to articles_path
+    redirect_to articles_path, alert: '削除しました'
   end
 
   private
