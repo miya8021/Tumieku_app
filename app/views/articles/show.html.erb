@@ -6,11 +6,11 @@
 <p>
   <% if @article.liked_by?(current_user) %>
     <span class="material-icons">
-    thumb_up
+      <%= render "like", article: @article %>
     </span>
   <% else %>
     <span class="material-icons">
-    thumb_up_off_alt
+      <%= render "dislike", article: @article %>
     </span>
   <% end %>
 </p>
