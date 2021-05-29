@@ -2,7 +2,7 @@ class ArticlesController < ApplicationController
   before_action :set_article, only: %i[show edit update destroy]
 
   def index
-    @articles = Article.order(:created_at)
+    @articles = Article.includes(:user, :likes).order(:created_at)
   end
 
   def new

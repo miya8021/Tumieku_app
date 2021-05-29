@@ -1,0 +1,28 @@
+<table>
+  <tbody>
+    <p>
+      <p>名前 <%= article.user.name %></p>
+      <p>エクササイズ <%= article.exercise.name %></p>
+      <p><%= article.minutes %>分</p>
+      <p>感想 <%= article.body %></p>
+    </p>
+    <p>
+      <% if article.liked_by?(current_user) %>
+        <span class="material-icons">
+          <%= render "like", article: article %>
+        </span>
+      <% else %>
+        <span class="material-icons">
+          <%= render "dislike", article: article %>
+        </span>
+      <% end %>
+    </p>
+    <p>
+      <%= link_to "詳細", article %>
+      <% if current_user.id == article.user_id %>
+        <%= link_to "編集", edit_article_path(article) %>
+        <%= link_to "削除", article_path(article), method: :delete, data: { confirm: "削除しますか？" } %>
+      <% end %>
+    </p>
+  </tbody>
+</table>
