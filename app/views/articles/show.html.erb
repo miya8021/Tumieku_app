@@ -3,15 +3,11 @@
 <p>エクササイズ <%= @article.exercise.name %></p>
 <p><%= @article.minutes %>分</p>
 <p>感想 <%= @article.body %></p>
-<p>
+<p id="article-<%= @article.id %>">
   <% if @article.liked_by?(current_user) %>
-    <span class="material-icons">
-      <%= render "like", article: @article %>
-    </span>
+    <%= render "like", post: @article %>
   <% else %>
-    <span class="material-icons">
-      <%= render "dislike", article: @article %>
-    </span>
+    <%= render "dislike", post: @article %>
   <% end %>
 </p>
 <p>

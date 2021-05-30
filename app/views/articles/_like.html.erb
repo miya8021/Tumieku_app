@@ -1,1 +1,4 @@
-<%= link_to "thumb_up", article_likes_path(article), method: :delete %>
+<%= link_to article_likes_path(post), {method: :delete, remote: true} do %>
+<i class="material-icons">thumb_up</i>
+<% end %>
+<%= post.likes_count %>

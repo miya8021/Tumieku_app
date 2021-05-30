@@ -1,1 +1,4 @@
-<%= link_to "thumb_up_off_alt", article_likes_path(article), method: :article %>
+<%= link_to article_likes_path(post), {method: :post, remote: true} do %>
+<i class="material-icons">thumb_up_off_alt</i>
+<% end %>
+<%= post.likes_count %>
