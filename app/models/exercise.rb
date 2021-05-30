@@ -1,5 +1,5 @@
 class Exercise < ApplicationRecord
   belongs_to :user
-  has_many :artices
+  has_many :articles
   validates :name, presence: true
 end
