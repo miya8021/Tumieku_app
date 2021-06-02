@@ -1,11 +1,9 @@
 class CommentsController < ApplicationController
-
   def create
-    article = Article.find(params[:article_id])
+    @article = Article.find(params[:article_id])
+    # buildメソッドを用いて、commentインスタンスにarticle_idをセットして作成
     @comment = current_user.comments.build(comment_params)
-    @comment.article_id = article.id
     if @comment.save
-      flash[:notice] = 'コメントしました'
       redirect_back(fallback_location: root_path)
     else
       flash[:alert] = 'コメントできませんでした'
@@ -14,7 +12,7 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    current_user.comments.find_by(article_id: params[:article_id]).destroy!
+    current_user.comments.find(params[:id]).destroy!
     flash[:alert] = '削除しました'
     redirect_back(fallback_location: root_path)
   end
@@ -22,6 +20,6 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:comment).permit(:content)
+    params.require(:comment).permit(:content, :user_id, :article_id).merge(user_id: current_user.id, article_id: params[:article_id])
   end
 end

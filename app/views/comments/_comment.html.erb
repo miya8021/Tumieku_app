@@ -1,6 +1,6 @@
-<% @comments.each do |comment| %>
-  <hr>
-  <p><%=link_to "#{comment.user.name}", user_path(comment.user.id) %></p>
-  <p><%= comment.content %></p>
-  <p><%= link_to "削除",  article_comments_path(comment.article.id, comment.id), method: :delete, data: { confirm: "削除しますか？" } %></p>
+<hr>
+<p><%=link_to "#{comment.user.name}", user_path(comment.user.id) %></p>
+<p><%= comment.content %></p>
+<% if current_user.id == comment.user_id %>
+<p><%= link_to "削除", article_comment_path(comment.article.id, comment.id), method: :delete, data: { confirm: "削除しますか？" } %></p>
 <% end %>
