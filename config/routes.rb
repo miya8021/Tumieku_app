@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   resources :exercises
   resources :articles do
     resource :likes, only: %i[create destroy]
-    resource :comments, only: %i[create destroy]
+    resources :comments, only: %i[create destroy]
   end
 end

@@ -20,8 +20,8 @@ class ArticlesController < ApplicationController
   end
 
   def show
+    @comments = @article.comments.includes(:user).order(created_at: :desc)
     @comment = Comment.new
-    @comments = Comment.includes(:user, :article).order(created_at: :desc)
   end
 
   def edit
