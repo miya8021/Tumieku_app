@@ -10,15 +10,6 @@
     <%= render "dislike", post: @article %>
   <% end %>
 </p>
-<p>
-  <% if current_user != article.user %>
-      <% if article.user.followed_by?(current_user) %>
-          <p><%=link_to "フォロー済み", user_relationships_path(article.user.id), method: :delete %></p>
-      <% else %>
-          <p><%=link_to "フォローする", user_relationships_path(article.user.id), method: :post %></p>
-      <% end %>
-  <% end %>
-</p>
 <div>
   <h2>コメント</h2>
   <%= render "comments/form" %>

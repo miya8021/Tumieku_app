@@ -1,0 +1,5 @@
+<h1>フォロー</h1>
+<% @users.each do |user| %>
+<hr>
+<%= link_to user.name, user_path(user.id) %>
+<% end %>
