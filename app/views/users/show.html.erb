@@ -5,7 +5,18 @@
 <% if @user.profile_image? %>
   <%= image_tag @user.profile_image.url %>
 <% else %>
-  <%= image_tag("default.png") %>
+  <%= image_tag ("default.png") %>
+<% end %>
+<p><%=link_to "フォロー中", follows_user_path(@user.id) %>
+<%= @user.followings.count %></p>
+<p><%=link_to "フォロワー", followers_user_path(@user.id) %>
+<%= @user.followers.count %></p>
+<% if current_user != @user %>
+    <% if @user.followed_by?(current_user) %>
+        <p><%=link_to "フォロー済み", user_relationships_path(@user.id), method: :delete %></p>
+    <% else %>
+        <p><%=link_to "フォローする", user_relationships_path(@user.id), method: :post %></p>
+    <% end %>
 <% end %>
 <%= link_to '編集', edit_user_registration_path, class: 'nav-link' %>
 <%= link_to "エクササイズ登録", new_exercise_path %>
