@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  before_action :set_article, only: %i[show edit update destroy]
+  before_action :set_article, only: %i[edit update destroy]
 
   def index
     @articles = Article.includes(:user, :likes).order(:created_at)
@@ -20,6 +20,7 @@ class ArticlesController < ApplicationController
   end
 
   def show
+    @article = Article.find(params[:id])
     @comments = @article.comments.includes(:user).order(created_at: :desc)
     @comment = Comment.new
   end
@@ -44,6 +45,7 @@ class ArticlesController < ApplicationController
   private
 
   def set_article
+    # 「自分の投稿」の中から URL の :id に対応する投稿を探し、「他人の投稿」の場合はエラー
     @article = current_user.articles.find(params[:id])
   end
 
