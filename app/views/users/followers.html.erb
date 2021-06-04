@@ -1,5 +1,2 @@
 <h1>フォロワー</h1>
-<% @users.each do |user| %>
-<hr>
-<%= link_to user.name, user_path(user.id) %>
-<% end %>
+<%= render "users" %>
