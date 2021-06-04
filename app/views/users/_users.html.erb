@@ -1,0 +1,9 @@
+<% @users.each do |user| %>
+<hr>
+  <% if user.profile_image? %>
+    <%= image_tag user.profile_image.url, size: "90x80" %>
+  <% else %>
+    <%= image_tag ("default.png"), size: "90x80" %>
+  <% end %>
+<%= link_to user.name, user_path(user.id) %>
+<% end %>
