@@ -1,1 +1,7 @@
 <p>仮トップページ</p>
+<p>
+  <%= link_to "新規登録", new_user_registration_path, class: 'nav-link' %>
+</p>
+<p>
+  <%= link_to "ゲストログイン（閲覧用）", users_guest_sign_in_path, method: :post, class: 'nav-link' %>
+</p>
