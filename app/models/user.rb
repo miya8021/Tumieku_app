@@ -13,7 +13,12 @@ class User < ApplicationRecord
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i.freeze
+
+  validates :name, presence: true, length: { maximum: 30 }
   validates :objective, length: { maximum: 140 }
+  validates :email, presence: true, uniqueness: true, length: { maximum: 255 }, format: { with: VALID_EMAIL_REGEX }
 
   mount_uploader :profile_image, ImageUploader
 
@@ -25,6 +30,7 @@ class User < ApplicationRecord
     find_or_create_by!(email: 'guest@example.com') do |user|
       user.password = SecureRandom.urlsafe_base64
       user.name = "ゲストユーザー"
+      user.objective = "毎日5分運動する"
     end
   end
 end
