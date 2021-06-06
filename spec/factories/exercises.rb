@@ -1,6 +1,7 @@
 FactoryBot.define do
   factory :exercise do
-    type { "" }
-    user { nil }
+    name { "腹筋" }
+    user
+    article
   end
 end
