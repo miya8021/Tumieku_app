@@ -21,10 +21,10 @@ class User < ApplicationRecord
     passive_relationships.find_by(following_id: user.id).present?
   end
 
-  def self.guest
-    find_or_create_by!(email: 'guest@example.com') do |user|
-      user.password = SecureRandom.urlsafe_base64
-      user.name = "ゲストユーザー"
-    end
-  end
+  # def self.guest
+  #   find_or_create_by!(email: 'guest@example.com') do |user|
+  #     user.password = SecureRandom.urlsafe_base64
+  #     user.name = "ゲストユーザー"
+  #   end
+  # end
 end
