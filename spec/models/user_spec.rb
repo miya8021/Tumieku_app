@@ -110,6 +110,11 @@ RSpec.describe User, type: :model do
           create(:comment)
           expect { subject }.to change { user.comments.count }.by(-2)
         end
+        it '削除されたユーザーのエクササイズも削除される' do
+          create_list(:exercise, 2, user: user)
+          create(:exercise)
+          expect { subject }.to change { user.exercises.count }.by(-2)
+        end
       end
     end
   end
