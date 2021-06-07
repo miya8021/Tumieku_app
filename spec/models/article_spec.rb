@@ -58,5 +58,21 @@ RSpec.describe Article, type: :model do
         expect(article.errors.messages[:body]).to include 'は140文字以内で入力してください'
       end
     end
+    describe 'アソシエーション' do
+      context '投稿が削除されたとき' do
+        subject { article.destroy }
+        let(:article) { create(:article) }
+        it '削除された投稿のいいねも削除される' do
+          create_list(:like, 2, article: article)
+          create(:like)
+          expect { subject }.to change { article.likes.count }.by(-2)
+        end
+        it '削除された投稿のコメントも削除される' do
+          create_list(:comment, 2, article: article)
+          create(:comment)
+          expect { subject }.to change { article.comments.count }.by(-2)
+        end
+      end
+    end
   end
 end

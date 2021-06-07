@@ -66,5 +66,51 @@ RSpec.describe User, type: :model do
         expect(user.errors.messages[:email]).to include 'は不正な値です'
       end
     end
+
+    context 'パスワードが空のとき' do
+      let(:user) { build(:user, password: '') }
+      it 'エラーが発生する' do
+        expect(subject).to eq false
+        expect(user.errors.messages[:password]).to include 'を入力してください'
+      end
+    end
+
+    context 'パスワードが5文字以下のとき' do
+      let(:user) { build(:user, password: '12345') }
+      it 'エラーが発生する' do
+        expect(subject).to eq false
+        expect(user.errors.messages[:password]).to include 'は6文字以上で入力してください'
+      end
+    end
+
+    context 'パスワードとパスワード(確認)が一致しないとき' do
+      let(:user) { build(:user, password: 'password', password_confirmation: 'password1') }
+      it 'エラーが発生する' do
+        expect(subject).to eq false
+        expect(user.errors.messages[:password_confirmation]).to include 'とパスワードの入力が一致しません'
+      end
+    end
+
+    describe "アソシエーション" do
+      subject { user.destroy }
+      let(:user) { create(:user) }
+      context "ユーザーが削除されたとき" do
+        it "削除されたユーザーの投稿も削除される" do
+          create_list(:article, 2, user: user)
+          create(:article)
+          expect { subject }.to change { user.articles.count }.by(-2)
+        end
+        it "削除されたユーザーのいいねも削除される" do
+          create_list(:like, 2, user: user)
+          create(:like)
+          expect { subject }.to change { user.likes.count }.by(-2)
+        end
+        it '削除されたユーザーのコメントも削除される' do
+          create_list(:comment, 2, user: user)
+          create(:comment)
+          expect { subject }.to change { user.comments.count }.by(-2)
+        end
+      end
+    end
   end
 end
