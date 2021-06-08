@@ -3,4 +3,8 @@ FactoryBot.define do
     name { "腹筋" }
     user
   end
+
+  trait :invalid do
+    name { nil }
+  end
 end
