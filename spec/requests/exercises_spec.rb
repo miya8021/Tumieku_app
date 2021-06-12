@@ -53,7 +53,7 @@ RSpec.describe "Exercises", type: :request do
       end
 
       context 'パラメータが異常なとき' do
-        let(:params) { { exercise: attributes_for(:exercise, :invalid) } }
+        let(:params) { { exercise: attributes_for(:exercise, :exercise_invalid) } }
 
         it 'リクエストが成功する' do
           subject
@@ -122,7 +122,7 @@ RSpec.describe "Exercises", type: :request do
         end
 
         context 'exerice のパラメータが異常なとき' do
-          let(:params) { { exercise: attributes_for(:exercise, :invalid) } }
+          let(:params) { { exercise: attributes_for(:exercise, :exercise_invalid) } }
 
           it 'リクエストが成功する' do
             subject

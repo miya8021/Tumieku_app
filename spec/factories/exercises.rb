@@ -4,7 +4,7 @@ FactoryBot.define do
     user
   end
 
-  trait :invalid do
-    name { nil }
+  trait :exercise_invalid do
+    name { "" }
   end
 end
