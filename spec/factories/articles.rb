@@ -4,6 +4,10 @@ FactoryBot.define do
     minutes { Faker::Number.within(range: 1..300) }
     body { Faker::Lorem.paragraph }
     user
-    exercise
+    exercise_id { FactoryBot.create(:exercise).id }
+  end
+
+  trait :invalid do
+    body { nil }
   end
 end

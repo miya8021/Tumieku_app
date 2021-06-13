@@ -2,7 +2,7 @@ class ArticlesController < ApplicationController
   before_action :set_article, only: %i[edit update destroy]
 
   def index
-    @articles = Article.includes(:user, :likes).order(:created_at)
+    @articles = Article.includes(:user, :likes).order(created_at: :desc)
   end
 
   def new
@@ -10,7 +10,7 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article = current_user.articles.new(article_params)
+    @article = current_user.articles.build(article_params)
     if @article.save
       redirect_to articles_path, notice: '投稿しました'
     else
@@ -44,12 +44,12 @@ class ArticlesController < ApplicationController
 
   private
 
+  def article_params
+    params.require(:article).permit(:day, :minutes, :body, :exercise_id)
+  end
+
   def set_article
     # 「自分の投稿」の中から URL の :id に対応する投稿を探し、「他人の投稿」の場合はエラー
     @article = current_user.articles.find(params[:id])
-  end
-
-  def article_params
-    params.require(:article).permit(:day, :minutes, :body, :exercise_id)
   end
 end

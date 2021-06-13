@@ -1,5 +1,4 @@
 class ExercisesController < ApplicationController
-
   before_action :set_exercise, only: %i[edit update destroy]
 
   def index
@@ -11,7 +10,7 @@ class ExercisesController < ApplicationController
   end
 
   def create
-    @exercise = current_user.exercises.new(exercise_params)
+    @exercise = current_user.exercises.build(exercise_params)
     if @exercise.save
       redirect_to exercises_path, notice: "登録しました"
     else
