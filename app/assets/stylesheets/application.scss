@@ -24,3 +24,15 @@
 .alert-alert {
   @extend .alert-danger;
 }
+// ページネーション
+.pagination>li>a {
+  color: #696969;
+}
+.page-item.active .page-link {
+  background: #FFA45B;
+  border-color: #FFA45B;
+}
+// ホバー
+.pagination>li>a:hover {
+  border-radius: 15px;
+}

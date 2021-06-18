@@ -1,8 +1,11 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: %i[edit update destroy]
 
+  PER_PAGE = 5
+
   def index
     @articles = Article.includes(:user, :likes).order(created_at: :desc)
+    @articles = Article.page(params[:page]).per(PER_PAGE)
   end
 
   def new
