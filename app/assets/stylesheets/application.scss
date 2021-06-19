@@ -26,10 +26,10 @@ header {
   padding-left: 30px;
 }
 .navbar-toggler .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(220,69,13)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,164,92)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
 .navbar-brand>p {
-  color: #DC460F;
+  color: #FFA45B;
   font-size: 36px;
   padding: 10px 10px;
   font-weight: 900;
@@ -54,4 +54,18 @@ header {
 // ホバー
 .pagination>li>a:hover {
   border-radius: 15px;
+}
+h1 {
+  text-align: center
+}
+// ボタン
+.btn.btn-outline-dark.btn-lg.rounded-pill {
+  border-color: #FFA45B;
+  color: #FFA45B;
+  margin: 20px;
+}
+.btn.btn-outline-dark.btn-lg.rounded-pill:hover {
+  background-color: #FFA45B;
+  border-color: #FFA45B;
+  color: #FBF6F0;
 }
