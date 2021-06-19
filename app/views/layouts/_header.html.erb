@@ -1,8 +1,11 @@
 <header>
-  <nav class="navbar navbar-expand navbar-light">
+  <nav class="navbar navbar-expand-md navbar-light">
     <%= link_to "Tumieku", root_path, class: 'navbar-brand' %>
-    <div id="Navber">
-      <ul class="navbar-nav">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
         <% if user_signed_in? %>
           <li class="nav-item active">
             <%= link_to 'ホーム', root_path, class: 'nav-link' %>
@@ -14,10 +17,10 @@
             <%= link_to "Tumieku", new_article_path, class: 'nav-link' %>
           </li>
           <li class="nav-item active">
-            <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'nav-link' %>
+            <%= link_to 'みんなのTumieku', articles_path, class: 'nav-link' %>
           </li>
           <li class="nav-item active">
-            <%= link_to 'みんなのTumieku', articles_path, class: 'nav-link' %>
+            <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'nav-link' %>
           </li>
       <% else %>
           <li class="nav-item active">

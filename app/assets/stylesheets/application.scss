@@ -17,6 +17,18 @@
 .mw-md {
   max-width: 576px;
 }
+header {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.nav-item.active {
+  padding-left: 20px;
+}
+
+
+
+
+
+
 // フラッシュ用スタイル
 .alert-notice {
   @extend .alert-info;
