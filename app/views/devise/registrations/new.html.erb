@@ -29,8 +29,16 @@
 
   <div class="form-group">
     <%= f.label :objective %>
-    <i class="material-icons" style="vertical-align:middle;">help</i></a></a>
+    <a class="js-modal-open" href=""><a class="js-modal-open" href=""><i class="material-icons" style="vertical-align:middle;">help</i></a></a>
     <%= f.text_area :objective, autofocus: true, class: 'form-control', rows: "3" %>
+  </div>
+  <div class="modal js-modal">
+    <div class="modal-bg js-modal-close"></div>
+    <div class="modal-content">
+        <a class="js-modal-close" href="">x</a>
+        <p>毎日運動を積み上げて、達成したい目標をたてましょう！</p>
+        <p>ポイントは「高すぎる目標」ではなく、「最低限の目標をたてること」</p>
+    </div>
   </div>
 
 
