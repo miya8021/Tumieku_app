@@ -1,13 +1,13 @@
 <div class="card text-center">
   <div class="card-body">
     <h5 class="card-title">エクササイズを登録しよう！</h5>
-    <%= form_with model: @exercise, local: true do |form| %>
   <div class="mx-sm-3 mb-2">
+    <%= form_with model: @exercise, local: true do |form| %>
     <%= form.text_field :name, autofocus: true, autocomplete: 'name', class: 'form-control', required: true %>
   </div>
-  <div>
-    <%= form.submit button_value %>
+  <div class="form-group row justify-content-center">
+    <%= form.submit button_value, class: 'btn btn-outline-dark btn-lg rounded-pill' %>
+    <%= link_to "もどる", user_path(id: current_user.id), class: 'btn btn-outline-dark btn-lg rounded-pill' %>
   </div>
     <% end %>
 </div>
-<%= link_to "もどる", user_path(id: current_user.id) %>
