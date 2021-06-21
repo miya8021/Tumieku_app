@@ -8,10 +8,10 @@
         <p><%= exercise.name %>
         <% if current_user.id == exercise.user_id %>
           <%= link_to edit_exercise_path(exercise) do %>
-            <i class="material-icons" style="vertical-align:sub; color: #1FB0BA;">edit</i>
+            <i class="material-icons" style="vertical-align:sub;">edit</i>
           <% end %>
           <%= link_to exercise_path(exercise), method: :delete, data: { confirm: "削除しますか？" } do %>
-            <i class="material-icons" style="vertical-align:sub; color: #1FB0BA;">delete</i>
+            <i class="material-icons" style="vertical-align:sub;">delete</i>
           <% end %>
         <% end %>
         </p>

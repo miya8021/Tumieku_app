@@ -29,7 +29,7 @@ header {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,164,92)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
 .navbar-brand>p {
-  color: #FFA45B;
+  color: #F16821;
   font-size: 36px;
   padding: 10px 10px;
   font-weight: 900;
@@ -48,8 +48,8 @@ header {
   color: #696969;
 }
 .page-item.active .page-link {
-  background: #FFA45B;
-  border-color: #FFA45B;
+  background: #FAB95B;
+  border-color: #FAB95B;
 }
 // ホバー
 .pagination>li>a:hover {
@@ -60,13 +60,13 @@ h1 {
 }
 // ボタン
 .btn.btn-outline-dark.btn-lg.rounded-pill {
-  border-color: #FFA45B;
-  color: #FFA45B;
+  border-color: #F16821;
+  color: #F16821;
   margin: 20px;
 }
 .btn.btn-outline-dark.btn-lg.rounded-pill:hover {
-  background-color: #FFA45B;
-  border-color: #FFA45B;
+  background-color: #FAB95B;
+  border-color: #F16821;
   color: #FBF6F0;
 }
 // 目標設定
@@ -116,4 +116,7 @@ h1 {
 }
 .card-body>p {
   font-size: 20px;
+}
+.material-icons {
+  color: #1A3263;
 }
