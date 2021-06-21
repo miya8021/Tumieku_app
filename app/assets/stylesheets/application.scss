@@ -17,7 +17,6 @@
 .mw-md {
   max-width: 576px;
 }
-
 // ナビバー
 header {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -104,7 +103,17 @@ h1 {
 .card {
   margin: 120px 20px;
   border-radius: 16px;
+  box-shadow: 2px 2px 4px #ccc;
 }
 .card-title {
-    margin: 60px;
+  margin: 60px;
+}
+// 登録エクササイズ一覧
+.card-list {
+  margin: 40px 5px;
+  border-radius: 16px;
+  box-shadow: 2px 2px 4px #ccc;
+}
+.card-body>p {
+  font-size: 20px;
 }
