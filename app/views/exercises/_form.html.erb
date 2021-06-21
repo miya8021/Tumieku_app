@@ -1,11 +1,20 @@
-<%= form_with model: @exercise, local: true do |form| %>
-  <div>
-    <%= form.label :name %>
-    <%= form.text_field :name, required: true %>
+<div class="container">
+  <div class="row align-items-center">
+    <div class="col-12">
+      <div class="card text-center" style="height: 24rem;">
+        <div class="card-body center">
+          <h4 class="card-title">エクササイズを登録しよう！</h4>
+          <%= form_with model: @exercise, local: true do |form| %>
+          <p class="card-text">
+          <%= form.text_field :name, autofocus: true, autocomplete: 'name', class: 'form-control', required: true %>
+          </p>
+        </div>
+        <div class="form-group row justify-content-center">
+          <%= form.submit button_value, class: 'btn btn-outline-dark btn-lg rounded-pill' %>
+          <%= link_to "もどる", user_path(id: current_user.id), class: 'btn btn-outline-dark btn-lg rounded-pill' %>
+        </div>
+          <% end %>
+      </div>
+    </div>
   </div>
-  <div>
-    <%= form.submit button_value %>
-  </div>
-<% end %>
-<%= link_to "登録エクササイズ一覧へ", exercises_path %>
-<%= link_to "もどる", user_path(id: current_user.id) %>
+</div>
