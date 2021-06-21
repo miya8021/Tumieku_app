@@ -1,17 +1,25 @@
-<h1>登録エクササイズ一覧</h1>
-<table>
-  <tbody>
-    <% @exercises.each do |exercise| %>
-      <tr>
-        <td>運動 <%= exercise.name %></td>
-        <td>
+<div class="contents-title text-center">
+  <h1>登録エクササイズ一覧</h1>
+</div>
+<div class="container">
+  <% @exercises.each do |exercise| %>
+    <div class="card-list">
+      <div class="card-body">
+        <%= exercise.name %>
+        <div class="float-right">
           <% if current_user.id == exercise.user_id %>
-            <%= link_to "編集", edit_exercise_path(exercise) %>
-            <%= link_to "削除", exercise_path(exercise), method: :delete, data: { confirm: "削除しますか？" } %>
+          <%= link_to edit_exercise_path(exercise) do %>
+            <i class="material-icons" style="vertical-align:sub;">edit</i>
           <% end %>
-          <%= link_to "エクササイズ登録へ", new_exercise_path %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+          <%= link_to exercise_path(exercise), method: :delete, data: { confirm: "削除しますか？" } do %>
+            <i class="material-icons" style="vertical-align:sub;">delete</i>
+          <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  <div class="form-group row justify-content-center">
+  <%= link_to "エクササイズ登録へ", new_exercise_path, class: 'btn btn-outline-dark btn-lg rounded-pill' %>
+  </div>
+</div>
