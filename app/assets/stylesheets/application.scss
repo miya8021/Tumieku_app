@@ -17,6 +17,7 @@
 .mw-md {
   max-width: 576px;
 }
+
 // ナビバー
 header {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -98,4 +99,12 @@ h1 {
   font-weight: 700;
   line-height: 1;
   color: #687678;
+}
+// エクササイズ登録画面
+.card {
+  margin: 120px 20px;
+  border-radius: 16px;
+}
+.card-title {
+    margin: 60px;
 }
