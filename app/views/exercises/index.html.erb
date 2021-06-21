@@ -5,16 +5,17 @@
   <% @exercises.each do |exercise| %>
     <div class="card-list">
       <div class="card-body">
-        <p><%= exercise.name %>
-        <% if current_user.id == exercise.user_id %>
+        <%= exercise.name %>
+        <div class="float-right">
+          <% if current_user.id == exercise.user_id %>
           <%= link_to edit_exercise_path(exercise) do %>
             <i class="material-icons" style="vertical-align:sub;">edit</i>
           <% end %>
           <%= link_to exercise_path(exercise), method: :delete, data: { confirm: "削除しますか？" } do %>
             <i class="material-icons" style="vertical-align:sub;">delete</i>
           <% end %>
-        <% end %>
-        </p>
+          <% end %>
+        </div>
       </div>
     </div>
   <% end %>
