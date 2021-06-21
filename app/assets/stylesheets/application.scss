@@ -65,8 +65,19 @@ h1 {
   margin: 20px;
 }
 .btn.btn-outline-dark.btn-lg.rounded-pill:hover {
-  background-color: #FAB95B;
+  background-color: #F16821;
   border-color: #F16821;
+  color: #FBF6F0;
+}
+// アカウント削除ボタン
+.btn.btn-outline-danger.btn-lg.rounded-pill {
+  border-color: #1A3263;
+  color: #1A3263;
+  margin: 20px;
+}
+.btn.btn-outline-danger.btn-lg.rounded-pill:hover {
+  background-color: #1A3263;
+  border-color: #1A3263;
   color: #FBF6F0;
 }
 // 目標設定
