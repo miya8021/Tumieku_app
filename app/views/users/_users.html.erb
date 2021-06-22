@@ -1,9 +1,17 @@
-<% @users.each do |user| %>
-<hr>
-  <% if user.profile_image? %>
-    <%= image_tag user.profile_image.url, size: "90x80" %>
-  <% else %>
-    <%= image_tag ("default.png"), size: "90x80" %>
-  <% end %>
-<%= link_to user.name, user_path(user.id) %>
-<% end %>
+<div class="container">
+  <% @users.each do |user| %>
+  <div class="card-list">
+    <div class="card-body">
+      <% if user.profile_image? %>
+        <%= image_tag user.profile_image.url, size: "60x50", class: "image_icons" %>
+      <% else %>
+        <%= image_tag ("default.png"), size: "60x50" %>
+      <% end %>
+        <%= link_to user.name, user_path(user.id) %>
+      <% end %>
+    </div>
+  </div>
+  <div class="form-group row justify-content-center">
+    <%= link_to "もどる", user_path(id: current_user.id), class: 'btn btn-outline-dark btn-lg rounded-pill' %>
+  </div>
+</div>
