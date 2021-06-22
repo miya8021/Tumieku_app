@@ -1,14 +1,14 @@
 <div class="container">
-<% @users.each do |user| %>
-<div class="card-list">
-<div class="card-body">
-<% if user.profile_image? %>
-<%= image_tag user.profile_image.url, size: "70x60" %>
-<% else %>
-<%= image_tag ("default.png"), size: "70x60" %>
-<% end %>
-<%= link_to user.name, user_path(user.id) %>
-<% end %>
-</div>
-</div>
+  <% @users.each do |user| %>
+  <div class="card-list">
+    <div class="card-body">
+      <% if user.profile_image? %>
+        <%= image_tag user.profile_image.url, size: "60x50", class: "image_icons" %>
+      <% else %>
+        <%= image_tag ("default.png"), size: "60x50" %>
+      <% end %>
+        <%= link_to user.name, user_path(user.id) %>
+      <% end %>
+    </div>
+  </div>
 </div>
