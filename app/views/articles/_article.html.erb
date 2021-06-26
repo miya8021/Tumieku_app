@@ -1,25 +1,35 @@
-<table>
-  <tbody>
-    <p>
-      <p><%= article.day %></p>
-      <p>名前 <%= article.user.name %></p>
-      <p>エクササイズ <%= article.exercise.name %></p>
-      <p><%= article.minutes %>分</p>
-      <p>感想 <%= article.body %></p>
-    </p>
-    <p id="article-<%= article.id %>">
-      <% if article.liked_by?(current_user) %>
-        <%= render "like", post: article %>
-      <% else %>
-        <%= render "dislike", post: article %>
-      <% end %>
-    </p>
-    <p>
-      <%= link_to "詳細", article %>
-      <% if current_user.id == article.user_id %>
-        <%= link_to "編集", edit_article_path(article) %>
-        <%= link_to "削除", article_path(article), method: :delete, data: { confirm: "削除しますか？" } %>
-      <% end %>
-    </p>
-  </tbody>
-</table>
+<div class="container">
+<div class="row">
+<div class="col-12">
+<div class="card" style="height: 20rem;">
+<div class="card-body">
+<div class="row">
+<% if article.user.profile_image? %>
+<%= image_tag article.user.profile_image.url, size: "90x80", class: "image_icons" %>
+<% else %>
+<%= image_tag ("default.png"), size: "90x80" %>
+<% end %>
+<h5 class="card-name"><%= article.user.name %></h5>
+<p class="card-text"><%= article.day %></p>
+</div>
+<div class="row">
+<p class="card-text">エクササイズ <%= article.exercise.name %></p>
+<p><%= article.minutes %>分</p>
+</div>
+<div class="row">
+<p class="card-text"><%= article.body %></p>
+</div>
+<div class="row">
+<p id="article-<%= article.id %>">
+<% if article.liked_by?(current_user) %>
+<%= render "like", post: article %>
+<% else %>
+<%= render "dislike", post: article %>
+<% end %>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
