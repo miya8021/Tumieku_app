@@ -1,32 +1,26 @@
 <div class="container">
-<div class="row">
 <div class="col-12">
 <div class="card" style="height: 20rem;">
 <div class="card-body">
 <div class="row">
 <% if article.user.profile_image? %>
-<%= image_tag article.user.profile_image.url, size: "90x80", class: "image_icons" %>
+<%= image_tag article.user.profile_image.url, size: "70x60", class: "image_icons" %>
 <% else %>
-<%= image_tag ("default.png"), size: "90x80" %>
+<%= image_tag ("default.png"), size: "70x60" %>
 <% end %>
-<h5 class="card-name"><%= article.user.name %></h5>
-<p class="card-text"><%= article.day %></p>
-</div>
-<div class="row">
-<p class="card-text">エクササイズ <%= article.exercise.name %></p>
-<p><%= article.minutes %>分</p>
-</div>
-<div class="row">
-<p class="card-text"><%= article.body %></p>
-</div>
-<div class="row">
-<p id="article-<%= article.id %>">
-<% if article.liked_by?(current_user) %>
-<%= render "like", post: article %>
-<% else %>
-<%= render "dislike", post: article %>
+<h5 class="card-name col"><%= article.user.name %></h5>
+<p class="card-text col-xs-3"><%= article.day %></p>
+<div class="dropdown drop-hover col-xs-1">
+<i class="material-icons">more_vert</i>
+<ul class="dropdown-menu">
+<li class="dropright drop-hover">
+<a class="dropdown-item"><%= link_to "詳細", article %></a>
+<% if current_user.id == article.user_id %>
+<a class="dropdown-item"><%= link_to "編集", edit_article_path(article) %></a>
+<a class="dropdown-item"><%= link_to "削除", article_path(article), method: :delete, data: { confirm: "削除しますか？" } %></a>
 <% end %>
-</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
