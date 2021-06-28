@@ -138,6 +138,7 @@ h1 {
   border-radius: 60%;
   margin-right: 10px;
 }
+// 投稿一覧
 .drop-hover:hover>.dropdown-menu {
   display: block !important;
   top: calc(30.1px);
@@ -145,6 +146,9 @@ h1 {
 .dropdown-menu {
   padding: 15px;
 }
-.card-text.col-xs-3 {
+.card-text-day {
   color: rgba(0, 0, 0, 0.6);
+}
+.row.justify-content-start {
+margin: 15px;
 }
