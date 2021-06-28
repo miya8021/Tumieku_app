@@ -51,6 +51,10 @@ header {
   background: #FAB95B;
   border-color: #FAB95B;
 }
+.pagination {
+  justify-content: center;
+  padding: 30px;
+}
 // ホバー
 .pagination>li>a:hover {
   border-radius: 15px;
@@ -112,7 +116,8 @@ h1 {
 }
 // エクササイズ登録画面
 .card {
-  padding: 30px;
+  padding: 20px;
+  margin-top: 20px;
   border-radius: 10px;
   box-shadow: 2px 2px 4px #ccc;
 }
@@ -150,5 +155,5 @@ h1 {
   color: rgba(0, 0, 0, 0.6);
 }
 .row.justify-content-start {
-margin: 15px;
+  margin: 15px;
 }
