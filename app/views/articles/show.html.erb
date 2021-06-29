@@ -1,38 +1,38 @@
 <div class="contents-title text-center">
-<h1>投稿詳細</h1>
+  <h1>投稿詳細</h1>
 </div>
 <div class="container">
-<div class="col-12">
-<div class="card" style="height: 20rem;">
-<div class="card-body">
-<div class="row justify-content-between">
-<% if @article.user.profile_image? %>
-<%= image_tag article.user.profile_image.url, size: "70x60", class: "image_icons" %>
-<% else %>
-<%= image_tag ("default.png"), size: "70x60" %>
-<% end %>
-<h5 class="card-name"><%= @article.user.name %></h5>
-<p class="card-text-day"><%= @article.day %></p>
-</div>
-<div class="row justify-content-start">
-<p>エクササイズ：<%= @article.exercise.name %></p>
-<p><%= @article.minutes %>分</p>
-</div>
-<div class="row justify-content-start">
-<p><%= @article.body %></p>
-</div>
-<div class="row form-inline justify-content-end">
-<p id="article-<%= @article.id %>">
-<% if @article.liked_by?(current_user) %>
-  <%= render "like", post: @article %>
-<% else %>
-  <%= render "dislike", post: @article %>
-<% end %>
-</p>
-</div>
-</div>
-</div>
-</div>
+  <div class="col-12">
+    <div class="card" style="height: 20rem;">
+      <div class="card-body">
+        <div class="row justify-content-between">
+          <% if @article.user.profile_image? %>
+            <%= image_tag article.user.profile_image.url, size: "70x60", class: "image_icons" %>
+          <% else %>
+            <%= image_tag ("default.png"), size: "70x60" %>
+          <% end %>
+          <h5 class="card-name"><%= @article.user.name %></h5>
+          <p class="card-text-day"><%= @article.day %></p>
+        </div>
+        <div class="row justify-content-start">
+          <p>エクササイズ：<%= @article.exercise.name %></p>
+          <p><%= @article.minutes %>分</p>
+        </div>
+        <div class="row justify-content-start">
+          <p><%= @article.body %></p>
+        </div>
+        <div class="row form-inline justify-content-end">
+          <p id="article-<%= @article.id %>">
+            <% if @article.liked_by?(current_user) %>
+              <%= render "like", post: @article %>
+            <% else %>
+              <%= render "dislike", post: @article %>
+            <% end %>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 <%= render "comments/form" %>
 <%= render 'comments/comment' %>
