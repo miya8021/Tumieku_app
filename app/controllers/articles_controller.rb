@@ -4,8 +4,7 @@ class ArticlesController < ApplicationController
   PER_PAGE = 5
 
   def index
-    @articles = Article.includes(:user, :likes).order(created_at: :desc)
-    @articles = Article.page(params[:page]).per(PER_PAGE)
+    @articles = Article.includes(:user, :likes).order(created_at: :desc).page(params[:page]).per(PER_PAGE)
   end
 
   def new

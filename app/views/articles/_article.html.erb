@@ -1,25 +1,45 @@
-<table>
-  <tbody>
-    <p>
-      <p><%= article.day %></p>
-      <p>名前 <%= article.user.name %></p>
-      <p>エクササイズ <%= article.exercise.name %></p>
-      <p><%= article.minutes %>分</p>
-      <p>感想 <%= article.body %></p>
-    </p>
-    <p id="article-<%= article.id %>">
-      <% if article.liked_by?(current_user) %>
-        <%= render "like", post: article %>
-      <% else %>
-        <%= render "dislike", post: article %>
-      <% end %>
-    </p>
-    <p>
-      <%= link_to "詳細", article %>
-      <% if current_user.id == article.user_id %>
-        <%= link_to "編集", edit_article_path(article) %>
-        <%= link_to "削除", article_path(article), method: :delete, data: { confirm: "削除しますか？" } %>
-      <% end %>
-    </p>
-  </tbody>
-</table>
+<div class="container">
+	<div class="col-12">
+		<div class="card" style="height: 20rem;">
+			<div class="card-body">
+				<div class="row justify-content-between">
+					<% if article.user.profile_image? %>
+						<%= image_tag article.user.profile_image.url, size: "70x60", class: "image_icons" %>
+					<% else %>
+						<%= image_tag ("default.png"), size: "70x60" %>
+					<% end %>
+						<h5 class="card-name"><%= article.user.name %></h5>
+						<p class="card-text-day"><%= article.day %></p>
+					<div class="dropdown drop-hover">
+						<i class="material-icons">more_vert</i>
+						<ul class="dropdown-menu">
+							<li class="dropright drop-hover">
+								<a class="dropdown-item"><%= link_to "詳細", article %></a>
+								<% if current_user.id == article.user_id %>
+									<a class="dropdown-item"><%= link_to "編集", edit_article_path(article) %></a>
+									<a class="dropdown-item"><%= link_to "削除", article_path(article), method: :delete, data: { confirm: "削除しますか？" } %></a>
+								<% end %>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="row justify-content-start">
+					<p>エクササイズ：<%= article.exercise.name %></p>
+					<p><%= article.minutes %>分</p>
+				</div>
+				<div class="row justify-content-start">
+					<p><%= article.body %></p>
+				</div>
+				<div class="row justify-content-end">
+					<p id="article-<%= article.id %>">
+					<% if article.liked_by?(current_user) %>
+						<%= render "like", post: article %>
+					<% else %>
+						<%= render "dislike", post: article %>
+					<% end %>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
