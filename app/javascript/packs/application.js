@@ -11,16 +11,3 @@ import "bootstrap/dist/js/bootstrap"
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
-
-// 目標設定
-$(function(){
-    $('.js-modal-open').on('click',function(){
-        $('.js-modal').fadeIn();
-	// イベントが行う処理をキャンセルする
-        return false;
-    });
-    $('.js-modal-close').on('click',function(){
-        $('.js-modal').fadeOut();
-        return false;
-    });
-});
