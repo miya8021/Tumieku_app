@@ -32,7 +32,7 @@
     </div>
   </div>
   <div class="row">
-    <div class="col col-sm-12 col-lg-8">
+    <div class="col col-sm-9 col-lg-9">
       <div class="objective">
         <p>目標</p>
         <p>『  <%= @user.objective %>  』</p>
@@ -50,4 +50,25 @@
     <%# #グラフ用ボタン %>
     <%# </div> %>
   </div>
+  <div class="text-center">
+    <p><i class="material-icons" style="vertical-align:bottom;">wysiwyg</i>あなたの投稿</p>
+  </div>
+  <div class="container">
+    <div class="col-12">
+      <% @articles.each do |article| %>
+      <div class="card-ariticles" style="height: 8rem;">
+        <div class="card-body">
+          <div class="row justify-content-between">
+            <p>エクササイズ : <%= article.exercise.name %> <%= article.minutes %> 分</p>
+            <p><%= article.day %></p>
+          </div>
+          <div class="row">
+            <p>感想 : <%= article.body %></p>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+  <%= paginate @articles %>
 </div><%# container %>
