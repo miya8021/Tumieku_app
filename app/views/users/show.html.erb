@@ -1,27 +1,74 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
-<p>MyPage <%= @user.name %></p>
-<p>目標 「<%= @user.objective %>」</p>
-<% if @user.profile_image? %>
-  <%= image_tag @user.profile_image.url %>
-<% else %>
-  <%= image_tag ("default.png") %>
-<% end %>
-<p><%=link_to "フォロー中", follows_user_path(@user.id) %>
-<%= @user.followings.count %></p>
-<p><%=link_to "フォロワー", followers_user_path(@user.id) %>
-<%= @user.followers.count %></p>
-<%= render "relationships/new" %>
-<%= link_to '編集', edit_user_registration_path, class: 'nav-link' %>
-<%= link_to "エクササイズ登録", new_exercise_path %>
-<%= link_to "登録エクササイズ一覧",exercises_path %>
-<div class="contents row">
-  <p>あなたの投稿一覧</p>
-  <% @articles.each do |article| %>
-    <p><%= article.day %></p>
-    <p>エクササイズ <%= article.exercise.name %></p>
-    <p><%= article.minutes %>分</p>
-    <p>感想 <%= article.body %></p>
-  <% end %>
+<div class="container">
+  <div class="row">
+    <div class="col col-sm-3">
+      <% if @user.profile_image? %>
+        <%= image_tag @user.profile_image.url, size: "120x100", class: "image_icons" %>
+      <% else %>
+        <%= image_tag ("default.png"), size: "120x100" %>
+      <% end %>
+    </div>
+    <div class="col-12 col-sm-9 col-lg-9">
+      <div class="profile">
+        <div class="row justify-content-between">
+          <h5><%= @user.name %></h5>
+          <div class="dropdown drop-hover">
+            <i class="material-icons">more_vert</i>
+            <ul class="dropdown-menu">
+              <li class="dropright drop-hover">
+                <a class="dropdown-item"><%= link_to '編集', edit_user_registration_path, class: 'nav-link' %></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="row justify-content-between">
+          <p>
+            <%=link_to "フォロー中", follows_user_path(@user.id) %>
+            <%= @user.followings.count %>
+            <%=link_to "フォロワー", followers_user_path(@user.id) %>
+            <%= @user.followers.count %>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col col-sm-9 col-lg-9">
+      <div class="objective">
+        <p>目標</p>
+        <p>『  <%= @user.objective %>  』</p>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col col-sm-4">
+      <%= render "relationships/new" %>
+    </div>
+    <div class="col col-sm-4">
+      <%= link_to "エクササイズ一覧",exercises_path, class: 'btn btn-outline-dark rounded-pill' %>
+    </div>
+    <%# <div class="row col"> %>
+    <%# #グラフ用ボタン %>
+    <%# </div> %>
+  </div>
+  <div class="text-center">
+    <p><i class="material-icons" style="vertical-align:bottom;">wysiwyg</i>あなたの投稿</p>
+  </div>
+  <div class="container">
+    <div class="col-12">
+      <% @articles.each do |article| %>
+      <div class="card-ariticles" style="height: 8rem;">
+        <div class="card-body">
+          <div class="row justify-content-between">
+            <p>エクササイズ : <%= article.exercise.name %> <%= article.minutes %> 分</p>
+            <p><%= article.day %></p>
+          </div>
+          <div class="row">
+            <p>感想 : <%= article.body %></p>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
   <%= paginate @articles %>
-</div>
+</div><%# container %>

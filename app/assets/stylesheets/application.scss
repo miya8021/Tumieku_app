@@ -15,7 +15,13 @@
  */
 @import "bootstrap/scss/bootstrap";
 .mw-md {
-  max-width: 576px;
+  max-width: 700px;
+}
+.mw-lg {
+  max-width: 960px;
+}
+.mw-xl {
+  max-width: 1140px;
 }
 // ナビバー
 header {
@@ -164,4 +170,81 @@ h1 {
 }
 .row.comment {
   padding: 10px;
+}
+// マイページ
+.profile {
+  padding: 10px 15px;
+  margin: 5px 5px;
+  box-shadow: 2px 2px 4px #ccc;
+  width: 100%;
+}
+.profile p {
+  margin: 0;
+  padding: 0;
+}
+.profile>.row.justify-content-between {
+   margin: 10px;
+}
+// マイページボタン
+.btn.btn-outline-dark.rounded-pill {
+  border-color: #F16821;
+  color: #F16821;
+  padding: 15px 20px;
+  margin: 15px 0px;
+}
+.btn.btn-outline-dark.rounded-pill:hover {
+  background-color: #F16821;
+  border-color: #F16821;
+  color: #FBF6F0;
+}
+.btn.btn-outline-danger.rounded-pill {
+  border-color: #1A3263;
+  color: #1A3263;
+  padding: 15px 20px;
+  margin: 15px 0px;
+}
+.btn.btn-outline-danger.rounded-pill:hover {
+  background-color: #1A3263;
+  border-color: #1A3263;
+  color: #FBF6F0;
+}
+// 目標吹き出し
+.objective {
+  position: relative;
+  display: inline-block;
+  margin: 30px 0px;
+  padding: 15px 15px;
+  width: 100%;
+  border: solid 2px #ccc;
+  box-sizing: border-box;
+  border-radius: 20px;
+ }
+ .objective::before {
+    content: "";
+    position: absolute;
+    top: -24px;
+    left: 50px;
+    margin-left: -15px;
+    border: 12px solid transparent;
+    border-bottom: 12px solid #fff;
+    z-index: 2;
+ }
+ .objective::after {
+    content: "";
+    position: absolute;
+    top: -29px;
+    left: 50px;
+    margin-left: -17px;
+    border: 14px solid transparent;
+    border-bottom: 14px solid #ccc;
+    z-index: 1;
+ }
+//  マイページ投稿一覧
+.card-ariticles {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-left: 8px solid #1A3263;
+    padding: 16px;
+    margin: 18px;
+    box-shadow: 2px 2px 4px #ccc;
 }
