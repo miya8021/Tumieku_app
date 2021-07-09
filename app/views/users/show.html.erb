@@ -1,34 +1,46 @@
 <div class="container">
   <div class="row">
-    <% if @user.profile_image? %>
-      <%= image_tag @user.profile_image.url, size: "140x120", class: "image_icons" %>
-    <% else %>
-      <%= image_tag ("default.png"), size: "140x120" %>
-    <% end %>
-    <div class="profile">
-      <div class="row justify-content-between">
-        <h5><%= @user.name %></h5>
-        <div class="dropdown drop-hover">
-          <i class="material-icons">more_vert</i>
-          <ul class="dropdown-menu">
-            <li class="dropright drop-hover">
-              <a class="dropdown-item"><%= link_to '編集', edit_user_registration_path, class: 'nav-link' %></a>
-            </li>
-          </ul>
+    <div class="col col-sm-3">
+      <% if @user.profile_image? %>
+        <%= image_tag @user.profile_image.url, size: "120x100", class: "image_icons" %>
+      <% else %>
+        <%= image_tag ("default.png"), size: "120x100" %>
+      <% end %>
+    </div>
+    <div class="col-12 col-sm-9 col-lg-9">
+      <div class="profile">
+        <div class="row justify-content-between">
+          <h5><%= @user.name %></h5>
+          <div class="dropdown drop-hover">
+            <i class="material-icons">more_vert</i>
+            <ul class="dropdown-menu">
+              <li class="dropright drop-hover">
+                <a class="dropdown-item"><%= link_to '編集', edit_user_registration_path, class: 'nav-link' %></a>
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
-      <div class="row justify-content-between">
-        <p>目標 「<%= @user.objective %>」</p>
-      </div>
-      <div class="row justify-content-between">
-        <p>
-          <%=link_to "フォロー中", follows_user_path(@user.id) %>
-          <%= @user.followings.count %>
-          <%=link_to "フォロワー", followers_user_path(@user.id) %>
-          <%= @user.followers.count %>
-          <%= render "relationships/new" %>
-        </p>
+        <div class="row justify-content-between">
+          <p>目標 「<%= @user.objective %>」</p>
+        </div>
+        <div class="row justify-content-between">
+          <p>
+            <%=link_to "フォロー中", follows_user_path(@user.id) %>
+            <%= @user.followings.count %>
+            <%=link_to "フォロワー", followers_user_path(@user.id) %>
+            <%= @user.followers.count %>
+          </p>
+        </div>
       </div>
     </div>
   </div>
-</div>
+  <div class="row col">
+    <%= render "relationships/new" %>
+  </div>
+  <div class="row col">
+    <%= link_to "エクササイズ一覧",exercises_path, class: 'btn btn-outline-dark rounded-pill' %>
+  </div>
+  <%# <div class="row col"> %>
+    <%# #グラフ用ボタン %>
+  <%# </div> %>
+</div><%# container %>
