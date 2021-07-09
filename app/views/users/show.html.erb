@@ -21,9 +21,6 @@
           </div>
         </div>
         <div class="row justify-content-between">
-          <p>目標 「<%= @user.objective %>」</p>
-        </div>
-        <div class="row justify-content-between">
           <p>
             <%=link_to "フォロー中", follows_user_path(@user.id) %>
             <%= @user.followings.count %>
@@ -34,13 +31,23 @@
       </div>
     </div>
   </div>
-  <div class="row col">
-    <%= render "relationships/new" %>
+  <div class="row">
+    <div class="col col-sm-12 col-lg-8">
+      <div class="objective">
+        <p>目標</p>
+        <p>『  <%= @user.objective %>  』</p>
+      </div>
+    </div>
   </div>
-  <div class="row col">
-    <%= link_to "エクササイズ一覧",exercises_path, class: 'btn btn-outline-dark rounded-pill' %>
-  </div>
-  <%# <div class="row col"> %>
+  <div class="row">
+    <div class="col col-sm-4">
+      <%= render "relationships/new" %>
+    </div>
+    <div class="col col-sm-4">
+      <%= link_to "エクササイズ一覧",exercises_path, class: 'btn btn-outline-dark rounded-pill' %>
+    </div>
+    <%# <div class="row col"> %>
     <%# #グラフ用ボタン %>
-  <%# </div> %>
+    <%# </div> %>
+  </div>
 </div><%# container %>
