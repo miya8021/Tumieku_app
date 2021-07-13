@@ -17,7 +17,7 @@
             <%= form.label :exercise_id %>
           </div>
           <div class="col">
-            <%= form.collection_select :exercise_id, Exercise.all, :id, :name, {prompt: ""}, class: 'form-control' %>  
+            <%= form.collection_select :exercise_id, current_user.exercises.all, :id, :name, {prompt: ""}, class: 'form-control' %>
           </div>
           <div class="col">
             <%= form.number_field :minutes, min: "0", class: 'form-control', required: true %>

@@ -2,7 +2,7 @@ class ExercisesController < ApplicationController
   before_action :set_exercise, only: %i[edit update destroy]
 
   def index
-    @exercises = Exercise.order(id: :asc)
+    @exercises = current_user.exercises.order(id: :asc)
   end
 
   def new
