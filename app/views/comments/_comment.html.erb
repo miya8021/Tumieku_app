@@ -1,11 +1,11 @@
 <div class="container">
-  <% @comments.each do |comment| %>
+  <% @article.comments.each do |comment| %>
   <div class="col-12">
     <div class="card" style="height: 12rem;">
       <div class="card-body">
         <div class="row">
-          <% if @article.user.profile_image? %>
-            <%= image_tag article.user.profile_image.url, size: "70x60", class: "image_icons" %>
+          <% if comment.user.profile_image? %>
+            <%= image_tag comment.user.profile_image.url, size: "70x60", class: "image_icons" %>
           <% else %>
             <%= image_tag ("default.png"), size: "70x60" %>
           <% end %>
