@@ -7,7 +7,7 @@
       <div class="card-body">
         <div class="row justify-content-between">
           <% if @article.user.profile_image? %>
-            <%= image_tag article.user.profile_image.url, size: "70x60", class: "image_icons" %>
+            <%= image_tag @article.user.profile_image.url, size: "70x60", class: "image_icons" %>
           <% else %>
             <%= image_tag ("default.png"), size: "70x60" %>
           <% end %>

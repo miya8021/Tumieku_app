@@ -5,6 +5,7 @@ class UsersController < ApplicationController
     # 時間を取得し合計
     @total_minutes = current_user.articles.sum(:minutes)
     @user.level = level_seting
+    current_user.update(level: @user.level)
   end
 
   def follows
