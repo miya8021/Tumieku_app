@@ -3,17 +3,27 @@
 <div class="heading-inner">
 <div class="heading-lead">
 <h2 class="heading-lead-title">
-<img class="owner_icon" src="/assets/app_logo.png">
+<img class="logo" src="/assets/app_logo.png">
 </h2>
-<p class="heading-lead-text">"積み上げる✗エクササイズ"</p>
-ログイン
-ゲストログインボタン
+<p class="heading-lead-text">
+運動を継続したいあなたへ
+</p>
+<%= link_to "今すぐはじめる", new_user_registration_path, class: 'btn btn-outline-dark rounded-pill' %>
+<%= link_to "ゲストログイン", users_guest_sign_in_path, method: :post, class: 'btn btn-outline-danger rounded-pill' %>
 </div>
 </div>
 <div class="heading-icon">
-写真
+<img class="owner_icon" src="/assets/undraw_fitness_tracker_3033.png">
 </div>
 </section>
+
+<div></div>
+
+
+
+
+
+
 
 <section id="about" class="contents">
 <h2 class="util-title">
@@ -22,7 +32,7 @@
 </section>
 ３つ
 カテゴリ登録
-グラフ機能
+ランキング機能
 フォロー機能
 <section id="features" class="contents">
 <h2 class="util-title">
@@ -44,9 +54,9 @@
 </div>
 <div class="features-item">
 <h3 class="features-item-title">
-<span class="features-item-title-inner">ランキング</span>
+<span class="features-item-title-inner">目標設定</span>
 </h3>
-<p class="features-item-text">ランキング機能の説明</p>
+<p class="features-item-text">目標設定の説明</p>
 </div>
 </div>
 </div>
@@ -56,7 +66,7 @@
 <span class="util-title-inner">Tumiekuをはじめよう</span>
 </h2>
 登録1分で完了します
-アカウント登録ボタン
-ゲストログイン
+<%= link_to "今すぐはじめる", new_user_registration_path, class: 'btn btn-outline-dark rounded-pill' %>
+<%= link_to "ゲストログイン", users_guest_sign_in_path, method: :post, class: 'btn btn-outline-danger rounded-pill'%>
 </section>
 </div>
