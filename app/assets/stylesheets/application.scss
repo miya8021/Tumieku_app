@@ -167,7 +167,7 @@ h1 {
   border-color: #F16821;
   color: #F16821;
   padding: 15px 20px;
-  margin: 15px 0px;
+  margin: 15px 10px;
 }
 .btn.btn-outline-dark.rounded-pill:hover {
   background-color: #F16821;
@@ -178,7 +178,7 @@ h1 {
   border-color: #1A3263;
   color: #1A3263;
   padding: 15px 20px;
-  margin: 15px 0px;
+  margin: 15px 10px;
 }
 .btn.btn-outline-danger.rounded-pill:hover {
   background-color: #1A3263;
@@ -240,10 +240,9 @@ footer {
   background-color: #1A3263;
 }
 // ホーム
-.heading-icon>.owner_icon {
-  position: absolute;
-  width: 550px;
-  top: 15%;
-  left: 50%;
-  z-index: 1000;
+.home_container {
+  margin: 60px 0;
+}
+.text-center.text-lg-start {
+  padding: 5px;
 }

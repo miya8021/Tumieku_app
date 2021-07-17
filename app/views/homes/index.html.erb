@@ -1,72 +1,19 @@
-<div id="home-container">
-<section id="heading">
-<div class="heading-inner">
-<div class="heading-lead">
-<h2 class="heading-lead-title">
-<img class="logo" src="/assets/app_logo.png">
-</h2>
-<p class="heading-lead-text">
-運動を継続したいあなたへ
-</p>
-<%= link_to "今すぐはじめる", new_user_registration_path, class: 'btn btn-outline-dark rounded-pill' %>
-<%= link_to "ゲストログイン", users_guest_sign_in_path, method: :post, class: 'btn btn-outline-danger rounded-pill' %>
-</div>
-</div>
-<div class="heading-icon">
-<img class="owner_icon" src="/assets/undraw_fitness_tracker_3033.png">
-</div>
+<section>
+  <div class="home_container">
+    <div class="row">
+      <div class="col-lg-6 d-flex flex-column justify-content-center">
+        <h1><img class="logo" src="/assets/app_logo.png"></h1>
+        <h4 class="text-center">運動を継続したいあなたへ</h4>
+        <div>
+          <div class="text-center text-lg-start">
+            <%= link_to "今すぐはじめる", new_user_registration_path, class: 'btn btn-outline-dark rounded-pill' %>
+            <%= link_to "ゲストログイン", users_guest_sign_in_path, method: :post, class: 'btn btn-outline-danger rounded-pill' %>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 home_img">
+        <img src="/assets/undraw_fitness_tracker.png" class="img-fluid" alt="">
+      </div>
+    </div>
+  </div>
 </section>
-
-<div></div>
-
-
-
-
-
-
-
-<section id="about" class="contents">
-<h2 class="util-title">
-<span class="util-title-inner">Tumiekuとは？</span>
-</h2>
-</section>
-３つ
-カテゴリ登録
-ランキング機能
-フォロー機能
-<section id="features" class="contents">
-<h2 class="util-title">
-<span class="util-title-inner">その他の特徴</span>
-</h2>
-<div class="features-content">
-<div class="features-list">
-<div class="features-item">
-<h3 class="features-item-title">
-<span class="features-item-title-inner">いいね機能</span>
-</h3>
-<p class="features-item-text">いいね機能の説明</p>
-</div>
-<div class="features-item">
-<h3 class="features-item-title">
-<span class="features-item-title-inner">Lvアップ機能</span>
-</h3>
-<p class="features-item-text">レベルアップの説明</p>
-</div>
-<div class="features-item">
-<h3 class="features-item-title">
-<span class="features-item-title-inner">目標設定</span>
-</h3>
-<p class="features-item-text">目標設定の説明</p>
-</div>
-</div>
-</div>
-</section>
-<section id="about" class="contents">
-<h2 class="util-title">
-<span class="util-title-inner">Tumiekuをはじめよう</span>
-</h2>
-登録1分で完了します
-<%= link_to "今すぐはじめる", new_user_registration_path, class: 'btn btn-outline-dark rounded-pill' %>
-<%= link_to "ゲストログイン", users_guest_sign_in_path, method: :post, class: 'btn btn-outline-danger rounded-pill'%>
-</section>
-</div>
