@@ -5,7 +5,7 @@ class ArticlesController < ApplicationController
 
   def index
     @articles = Article.includes(:user, :likes).order(created_at: :desc).page(params[:page]).per(PER_PAGE)
-    @all_rank = User.order(level: :desc).limit(3).pluck(:id, :name, :level)
+    @all_rank = User.order(level: :desc).limit(5).pluck(:id, :name, :level)
   end
 
   def new
