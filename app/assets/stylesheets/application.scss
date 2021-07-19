@@ -167,7 +167,7 @@ h1 {
   border-color: #F16821;
   color: #F16821;
   padding: 15px 20px;
-  margin: 15px 0px;
+  margin: 15px 10px;
 }
 .btn.btn-outline-dark.rounded-pill:hover {
   background-color: #F16821;
@@ -178,7 +178,7 @@ h1 {
   border-color: #1A3263;
   color: #1A3263;
   padding: 15px 20px;
-  margin: 15px 0px;
+  margin: 15px 10px;
 }
 .btn.btn-outline-danger.rounded-pill:hover {
   background-color: #1A3263;
@@ -238,4 +238,41 @@ footer {
   text-align: center;
   color: #FBF6F0;
   background-color: #1A3263;
+}
+// ホーム
+.home_container {
+  margin: 60px 0;
+}
+.text-center.text-lg-start {
+  padding: 5px;
+}
+.description {
+  margin-top: auto;
+  text-align: center;
+  color: #FBF6F0;
+  background: #F16821;
+  padding: 50px 35px;
+}
+.pricing .box {
+  padding: 20px;
+  background: #fff;
+  text-align: center;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+}
+.section-bg {
+  background-color: #f6f8fb;
+}
+section {
+  padding: 20px 0;
+}
+#back {
+  position: fixed;
+  right: 5px;
+  bottom: 20px;
+}
+.arrow {
+  width: 40px;
+  height: 40px;
 }

@@ -1,7 +1,134 @@
-<p>仮トップページ</p>
-<p>
-  <%= link_to "新規登録", new_user_registration_path, class: 'nav-link' %>
-</p>
-<p>
-  <%= link_to "ゲストログイン（閲覧用）", users_guest_sign_in_path, method: :post, class: 'nav-link' %>
-</p>
+<div class="home_container">
+  <section id="heading">
+    <div class="row">
+      <div class="col-lg-6 d-flex flex-column justify-content-center">
+        <h1><img class="logo" src="/assets/app_logo.png"></h1>
+        <p class="text-center">エクササイズを継続したいあなたに</p>
+        <div>
+          <div class="text-center text-lg-start">
+            <%= link_to "今すぐはじめる", new_user_registration_path, class: 'btn btn-outline-dark rounded-pill' %>
+            <%= link_to "ゲストログイン", users_guest_sign_in_path, method: :post, class: 'btn btn-outline-danger rounded-pill' %>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 home_img">
+        <img src="/assets/undraw_fitness_tracker.png" class="img-fluid" alt="">
+      </div>
+    </div>
+  </section>
+</div>
+</div>
+<div>
+  <section id="about" class="contents">
+    <div class="description">
+      <h3>Tumiekuとは</h3>
+        <p>
+          目標を立てて、楽しくエクササイズの<br>
+          積み上げが継続できるSNS型記録サービスです。
+        </p>
+    </div>
+  </section>
+</div>
+<div class="container-fluid py-4 mw-md">
+  <section>
+    <div class="row featurette">
+      <div class="col-md-6">
+        <h2 class="featurette-heading">
+        <span class="text-muted">
+          エクササイズ登録機能
+        </span>
+        </h2>
+        <p class="lead">
+          説明文
+        </p>
+      </div>
+      <div class="col-md-6">
+        <img class="featurette-image img-fluid" src="/assets/undraw_exercise_registration.png" alt="">
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="row featurette">
+      <div class="col-md-6 order-md-2">
+        <h2 class="featurette-heading">
+        <span class="text-muted">
+          ランキング機能
+        </span>
+        </h2>
+        <p class="lead">
+          説明
+        </p>
+      </div>
+      <div class="col-md-6 order-md-1">
+        <img class="featurette-image img-fluid" src="/assets/undraw_ranking.png" alt="">
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="row featurette">
+      <div class="col-md-6">
+        <h2 class="featurette-heading">
+        <span class="text-muted">
+          フォロー機能
+        </span>
+        </h2>
+        <p class="lead">
+          説明
+        </p>
+      </div>
+      <div class="col-md-6">
+        <img class="featurette-image img-fluid" src="/assets/undraw_Follows.png" alt="">
+      </div>
+    </div>
+  </section>
+</div>
+
+<div>
+  <section id="pricing" class="pricing section-bg">
+    <div class="container">
+      <div class="section-title">
+        <p>その他、継続をサポートする仕組み</div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6">
+            <div class="box">
+              <h3>いいね機能</h3>
+              <p>説明分</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mt-4 mt-md-0">
+            <div class="box featured">
+              <h3>Lvアップ機能</h3>
+              <p>説明文</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mt-4 mt-lg-0">
+            <div class="box">
+              <h3>目標設定機能</h3>
+              <p>説明文</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+<div>
+  <section >
+    <div class="row justify-content-center">
+      <div class="col-lg-6 d-flex flex-column">
+        <h1>Tumiekuをはじめよう</h1>
+        <p class="text-center">登録は1分で完了します</p>
+        <div>
+          <div class="text-center text-lg-start">
+            <%= link_to "今すぐはじめる", new_user_registration_path, class: 'btn btn-outline-dark rounded-pill' %>
+            <%= link_to "ゲストログイン", users_guest_sign_in_path, method: :post, class: 'btn btn-outline-danger rounded-pill' %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
