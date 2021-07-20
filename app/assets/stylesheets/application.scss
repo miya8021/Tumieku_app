@@ -15,13 +15,13 @@
  */
 @import "bootstrap/scss/bootstrap";
 .mw-md {
-  max-width: 768px;
+  max-width: 700px;
 }
 .mw-lg {
-  max-width: 992px;
+  max-width: 960px;
 }
 .mw-xl {
-  max-width: 1200px;
+  max-width: 1140px;
 }
 // ナビバー
 header {
@@ -153,9 +153,6 @@ h1 {
   border-bottom: 1px solid #ccc;
   padding: 8px;
 }
-
-
-
 // マイページ
 .profile {
   padding: 10px 15px;
@@ -239,7 +236,6 @@ body{
   flex-direction: column;
   min-height: 100vh;
 }
-
 footer {
   margin-top: auto;
   padding: 10px;
@@ -283,4 +279,11 @@ section {
 .arrow {
   width: 40px;
   height: 40px;
+}
+.container {
+  margin: 30px 0;
+}
+.title {
+  margin-top: 20px;
+  text-align: center;
 }

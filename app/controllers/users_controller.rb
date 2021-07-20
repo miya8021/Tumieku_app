@@ -1,11 +1,11 @@
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
-    @articles = current_user.articles.page(params[:page]).per(3).order(created_at: :desc)
+    @articles = @user.articles.page(params[:page]).per(3).order(created_at: :desc)
     # 時間を取得し合計
-    @total_minutes = current_user.articles.sum(:minutes)
+    @total_minutes = @user.articles.sum(:minutes)
     @user.level = level_seting
-    current_user.update(level: @user.level)
+    @user.update(level: @user.level)
   end
 
   def follows
