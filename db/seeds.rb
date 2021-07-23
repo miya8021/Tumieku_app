@@ -13,8 +13,8 @@ User.create!(
       password: 'password',
       password_confirmation: 'password',
       objective: '毎日運動をする習慣をつける',
-      profile_image: File.open('./public/images/img.png'),
-      level: 3
+      profile_image: File.open('app/assets/images/img.png'),
+      level: 1
     },
     {
       name: 'Miya',
@@ -22,7 +22,7 @@ User.create!(
       password: 'password',
       password_confirmation: 'password',
       objective: '毎日5分運動をする',
-      profile_image: File.open('./public/images/icon.jpg'),
+      profile_image: File.open('app/assets/images/icon.jpg'),
       level: 3
     },
     {
