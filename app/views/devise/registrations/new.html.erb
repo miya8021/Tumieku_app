@@ -1,0 +1,62 @@
+<h4 class="title"><%= t('.sign_up') %></h4>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= bootstrap_devise_error_messages! %>
+
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, autofocus: true, autocomplete: 'name', class: 'form-control', required: true %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :email %>
+    <%= f.email_field :email, autofocus: true, autocomplete: 'email', class: 'form-control', required: true %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :password %>
+    <%= f.password_field :password, autocomplete: 'current-password', class: 'form-control' %>
+
+    <% if @minimum_password_length %>
+      <small class="form-text text-muted"><%= t('devise.shared.minimum_password_length', count: @minimum_password_length) %></small>
+    <% end %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation, autocomplete: 'current-password', class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :objective %>
+    <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModalCenter">?</button>
+    <%= f.text_area :objective, autofocus: true, class: 'form-control', rows: "3" %>
+  </div>
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalCenterTitle">目標設定のコツ</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+        <p>毎日運動を積み上げて、達成したい目標をたてましょう！</p>
+        <p>ポイントは「高すぎる目標」ではなく、「最低限の目標」をたてること</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="form-group">
+    <%= f.label :profile_image %><br/>
+    <%= f.file_field :profile_image %>
+  </div>
+
+  <div class="form-group row justify-content-center">
+    <%= f.submit t('.sign_up'), class: 'btn btn-outline-dark btn-lg rounded-pill' %>
+    <%= link_to "ゲストログイン", users_guest_sign_in_path, method: :post, class: 'btn btn-outline-danger btn-lg rounded-pill' %>
+  </div>
+<% end %>

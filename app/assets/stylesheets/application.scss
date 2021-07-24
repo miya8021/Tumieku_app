@@ -1,0 +1,290 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import "bootstrap/scss/bootstrap";
+.mw-md {
+  max-width: 700px;
+}
+.mw-lg {
+  max-width: 960px;
+}
+.mw-xl {
+  max-width: 1140px;
+}
+// ナビバー
+header {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.nav-item.active {
+  margin-top: 5px;
+  padding-left: 30px;
+}
+.navbar-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,164,92)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+.navbar-brand>p {
+  color: #F16821;
+  font-size: 36px;
+  padding: 10px 10px;
+  font-weight: 900;
+  line-height: 34px;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+// フラッシュ用スタイル
+.alert-notice {
+  @extend .alert-info;
+}
+.alert-alert {
+  @extend .alert-danger;
+}
+// ページネーション
+.pagination>li>a {
+  color: #696969;
+}
+.page-item.active .page-link {
+  background: #FAB95B;
+  border-color: #FAB95B;
+}
+.pagination {
+  justify-content: center;
+  padding: 30px;
+}
+// ホバー
+.pagination>li>a:hover {
+  border-radius: 15px;
+}
+h1 {
+  text-align: center
+}
+// ボタン
+.btn.btn-outline-dark.btn-lg.rounded-pill {
+  border-color: #F16821;
+  color: #F16821;
+  margin: 20px;
+}
+.btn.btn-outline-dark.btn-lg.rounded-pill:hover {
+  background-color: #F16821;
+  border-color: #F16821;
+  color: #FBF6F0;
+}
+// アカウント削除ボタン
+.btn.btn-outline-danger.btn-lg.rounded-pill {
+  border-color: #1A3263;
+  color: #1A3263;
+  margin: 20px;
+}
+.btn.btn-outline-danger.btn-lg.rounded-pill:hover {
+  background-color: #1A3263;
+  border-color: #1A3263;
+  color: #FBF6F0;
+}
+// 目標設定
+.btn.btn-secondary {
+  background-color: #1A3263;
+  border-color: #1A3263;
+  border-radius: 50%;
+  margin-bottom: 5px;
+}
+// エクササイズ登録画面
+.card {
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 4px #ccc;
+  justify-content: center;
+}
+.card-title {
+  margin: 40px;
+}
+// 登録エクササイズ一覧
+.card-list {
+  margin: 40px 5px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 4px #ccc;
+}
+.card-body>p {
+  font-size: 20px;
+}
+.card-body>i {
+  margin-left: 10%;
+}
+.material-icons {
+  color: #1A3263;
+}
+.image_icons {
+  border-radius: 60%;
+  margin-right: 10px;
+}
+// 投稿一覧
+.drop-hover:hover>.dropdown-menu {
+  display: block !important;
+  top: calc(30.1px);
+}
+.dropdown-menu {
+  padding: 15px;
+}
+.card-text-day {
+  color: rgba(0, 0, 0, 0.6);
+}
+.row.justify-content-start {
+  margin: 15px;
+}
+.content {
+  margin: 15px;
+  padding: 10px;
+  text-shadow: 2px 2px 4px #ccc;
+}
+.row.comment {
+  padding: 10px;
+}
+.rank_status {
+  border-bottom: 1px solid #ccc;
+  padding: 8px;
+}
+// マイページ
+.profile {
+  padding: 10px 15px;
+  margin: 5px 5px;
+  box-shadow: 2px 2px 4px #ccc;
+  width: 100%;
+}
+.profile p {
+  margin: 0;
+  padding: 0;
+}
+.profile>.row.justify-content-between {
+  margin: 10px;
+}
+// マイページボタン
+.btn.btn-outline-dark.rounded-pill {
+  border-color: #F16821;
+  color: #F16821;
+  padding: 15px 20px;
+  margin: 15px 10px;
+}
+.btn.btn-outline-dark.rounded-pill:hover {
+  background-color: #F16821;
+  border-color: #F16821;
+  color: #FBF6F0;
+}
+.btn.btn-outline-danger.rounded-pill {
+  border-color: #1A3263;
+  color: #1A3263;
+  padding: 15px 20px;
+  margin: 15px 10px;
+}
+.btn.btn-outline-danger.rounded-pill:hover {
+  background-color: #1A3263;
+  border-color: #1A3263;
+  color: #FBF6F0;
+}
+// 目標吹き出し
+.objective {
+  position: relative;
+  display: inline-block;
+  margin: 30px 0px;
+  padding: 15px 15px;
+  width: 100%;
+  border: solid 2px #ccc;
+  box-sizing: border-box;
+  border-radius: 20px;
+ }
+ .objective::before {
+  content: "";
+  position: absolute;
+  top: -24px;
+  left: 50px;
+  margin-left: -15px;
+  border: 12px solid transparent;
+  border-bottom: 12px solid #fff;
+  z-index: 2;
+ }
+ .objective::after {
+  content: "";
+  position: absolute;
+  top: -29px;
+  left: 50px;
+  margin-left: -17px;
+  border: 14px solid transparent;
+  border-bottom: 14px solid #ccc;
+  z-index: 1;
+ }
+//  マイページ投稿一覧
+.card-ariticles {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-left: 8px solid #1A3263;
+  padding: 16px;
+  margin: 18px;
+  box-shadow: 2px 2px 4px #ccc;
+}
+// フッター
+body{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+footer {
+  margin-top: auto;
+  padding: 10px;
+  text-align: center;
+  color: #FBF6F0;
+  background-color: #1A3263;
+}
+// ホーム
+.home_container {
+  margin: 60px 0;
+}
+.text-center.text-lg-start {
+  padding: 5px;
+}
+.description {
+  margin-top: auto;
+  text-align: center;
+  color: #FBF6F0;
+  background: #F16821;
+  padding: 50px 35px;
+}
+.pricing .box {
+  padding: 20px;
+  background: #fff;
+  text-align: center;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+}
+.section-bg {
+  background-color: #f6f8fb;
+}
+section {
+  padding: 20px 0;
+}
+#back {
+  position: fixed;
+  right: 5px;
+  bottom: 20px;
+}
+.arrow {
+  width: 40px;
+  height: 40px;
+}
+.title {
+  margin: 30px 0 30px 0;
+  text-align: center;
+}
+.row {
+ margin-left: 1px;
+ margin-right: 1px;
+}

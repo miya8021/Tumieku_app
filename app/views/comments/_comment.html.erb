@@ -1,0 +1,28 @@
+<div class="container">
+  <% @article.comments.each do |comment| %>
+  <div class="col-12">
+    <div class="card" style="height: 12rem;">
+      <div class="card-body">
+        <div class="row">
+          <% if comment.user.profile_image? %>
+            <%= image_tag comment.user.profile_image.url, size: "70x60", class: "image_icons" %>
+          <% else %>
+            <%= image_tag ("default.png"), size: "70x60" %>
+          <% end %>
+          <p class="card-name"><%=link_to "#{comment.user.name}", user_path(comment.user.id) %></p>
+        </div>
+        <div class="row comment form-inline">
+          <%= comment.content %>
+        </div>
+        <div class="row justify-content-end">
+        <% if current_user.id == comment.user_id %>
+          <%= link_to article_comment_path(comment.article.id, comment.id), method: :delete, data: { confirm: "削除しますか？" } do %>
+            <i class="material-icons">delete</i>
+          <% end %>
+        <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>

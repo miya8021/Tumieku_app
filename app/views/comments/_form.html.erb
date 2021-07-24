@@ -1,0 +1,14 @@
+<div class="container">
+  <%= form_with(model: [@article, @comment], local: true) do |form| %>
+  <div class="form-group">
+    <div class="content row justify-content-center">
+      <%= form.text_area :content, class: 'form-control', size: "70x3", required: true %>
+    </div>
+    <div class="row justify-content-end">
+      <%= button_tag type: "submit", class: 'btn btn-outline-dark btn-lg rounded-pill' do %>
+      コメントを送信
+      <% end %>
+    </div>
+  </div>
+  <% end %>
+</div>

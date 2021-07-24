@@ -1,0 +1,57 @@
+<div class="contents-title text-center">
+  <h4 class="title">みんなのTumieku</h4>
+  <div class="row">
+    <div class="col-sm-9">
+      <%= render @articles %>
+      <%= paginate @articles %>
+    </div>
+    <div class="col-sm-3">
+      <p><i class="material-icons">military_tech</i>ランキング</p>
+        <% last_level = 0 %>
+        <% rank_status = 1 %>
+        <% @all_rank.each.with_index(1) do |rank, i| %>
+          <!--最初の値をlast_likeに保存-->
+          <% if i == 1 %>
+            <% last_level = rank[2] %>
+          <% end %>
+          <!--lastlevelとレベルを比べて同じなら同じ順位、違うなら次の順位表示-->
+          <% if rank[2] != last_level %>
+            <% rank_status = i %>
+        <p>
+          <%# 王冠表示 %>
+          <% case rank_status when 1 %>
+            <i class="fas fa-crown" style='color: gold;'></i>
+          <% when 2 %>
+            <i class="fas fa-crown" style='color: silver;'></i>
+          <% when 3 %>
+            <i class="fas fa-crown" style='color: orange;'></i>
+          <% end %>
+          第<%= rank_status %>位
+        </p>
+        <p class="rank_status">
+            Lv.<%= rank[2] %><br>
+            <%= link_to rank[1], user_path(rank[0]) %>
+        </p>
+            <% last_level = rank[2] %>
+          <% else %>
+            <% last_level = rank[2] %>
+        <p>
+          <%# 王冠表示 %>
+          <% case rank_status when 1 %>
+            <i class="fas fa-crown" style='color: gold;'></i>
+          <% when 2 %>
+            <i class="fas fa-crown" style='color: silver;'></i>
+          <% when 3 %>
+            <i class="fas fa-crown" style='color: orange;'></i>
+          <% end %>
+          第<%= rank_status %>位
+        </p>
+        <p class="rank_status">
+          Lv.<%= rank[2] %><br>
+          <%= link_to rank[1], user_path(rank[0]) %>
+        </p>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
