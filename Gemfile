@@ -32,6 +32,7 @@ gem 'rails-i18n', '~> 6.0'
 gem 'devise-i18n'
 gem 'devise-bootstrap-views', '~> 1.0'
 gem 'carrierwave', '~> 2.0'
+gem 'fog-aws'
 gem 'mini_magick'
 gem 'kaminari'
 
