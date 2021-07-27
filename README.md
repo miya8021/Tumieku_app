@@ -51,7 +51,7 @@ Qiitaに詳細を執筆しています。
 - フロントエンド：HTML&CSS/Bootstrap/JavaScript/jQuey
 - DB：PostgreSQL
 - テスト：Rspec
-- インフラ：Heroku(ステージング環境→本番環境)
+- インフラ：Heroku(ステージング環境→本番環境)+AWS(S3)
 - ソースコード管理：GitHub(Projectsのカンバン方式でタスクを管理)
 - その他使用ツール&素材等
   - Visual Studio Code
@@ -206,4 +206,5 @@ end
 - 視覚で直感的にわかりやすいように、アイコンやロゴを積極的に使用し、シンプルにしました。
 - アプリのカラーは、TumiekuがSNS的な要素を持ち、｢人との繋がり｣｢励まし合い｣といった要素も含むため、メインカラ−のオレンジに設定。
 - 統一感をだすため、下記の配色を参考にデザインしました。
+
 ![Color Hunt Palette (1).png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/923146/ff422b65-25c4-0b7a-88fd-32c8a81f355b.png)
