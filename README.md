@@ -1,5 +1,4 @@
 <a href="https://gyazo.com/b427740a6c11ac0de1c2aa4fb1934285"><img src="https://i.gyazo.com/b427740a6c11ac0de1c2aa4fb1934285.gif" alt="Image from Gyazo" width="1000"/></a>
-
 ## アプリ作成背景
 ### ①課題
 日頃の運動不足に加えて、最近はこんなご時世なので、気軽に外に出れないから、家で過ごす方が多くなったため、さらに運動不足を感じています。
@@ -32,8 +31,6 @@
 そして、私と同じ様に、<font color="Red">**「健康のために毎日運動をしたいけど、継続できない」**</font>悩みを抱えている方は、少なからずいるのではないかと考えました。
 そのような考えから、<font color="Red">**『Tumieku』**</font>を開発しました。
 （「ツミエク」と呼びます。”エクササイズを積み上げる”ので、コレにしました。）
-
-
 ### URL
 
 - URL:https://tumieku-app.herokuapp.com
