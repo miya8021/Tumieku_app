@@ -8,7 +8,7 @@
           <% else %>
             <%= image_tag ("default.png"), size: "70x60" %>
           <% end %>
-          <h5 class="card-name"><%= article.user.name %></h5>
+          <h5 class="card-name"><%=link_to "#{article.user.name}", user_path(article.user.id) %></h5>
           <p class="card-text-day"><%= article.day %></p>
           <div class="dropdown drop-hover">
             <i class="material-icons">more_vert</i>
