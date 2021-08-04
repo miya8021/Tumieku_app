@@ -20,6 +20,10 @@ class ArticlesController < ApplicationController
       flash.now[:alert] = '投稿に失敗しました'
       render :new
     end
+    @total_minutes = current_user.articles.sum(:minutes)
+    @user = User.find(current_user.id)
+    @user.level = @total_minutes / 30
+    @user.update(level: @user.level)
   end
 
   def show
@@ -43,16 +47,20 @@ class ArticlesController < ApplicationController
   def destroy
     @article.destroy!
     redirect_to articles_path, alert: '削除しました'
+    @total_minutes = current_user.articles.sum(:minutes)
+    @user = User.find(current_user.id)
+    @user.level = @total_minutes / 30
+    @user.update(level: @user.level)
   end
 
   private
 
   def article_params
-    params.require(:article).permit(:day, :minutes, :body, :exercise_id)
+    params.require(:article).permit(:day, :minutes, :body, :exercise_id, :user_id)
   end
 
   def set_article
     # 「自分の投稿」の中から URL の :id に対応する投稿を探し、「他人の投稿」の場合はエラー
     @article = current_user.articles.find(params[:id])
-  end
+	end
 end
