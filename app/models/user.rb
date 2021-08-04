@@ -36,7 +36,7 @@ class User < ApplicationRecord
     end
   end
 
-	def self.all_ranks
-	  @all_ranks = User.order(level: :desc).limit(RANK).pluck(:id, :name, :level)
-	end
+  def self.all_ranks
+    @all_ranks = User.order(level: :desc).limit(RANK).pluck(:id, :name, :level)
+  end
 end
