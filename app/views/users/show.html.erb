@@ -50,7 +50,6 @@
     <p><i class="material-icons" style="vertical-align:bottom;">wysiwyg</i>あなたの投稿</p>
   </div>
   <div class="container">
-    <div class="col-12">
       <% @articles.each do |article| %>
       <div class="card-ariticles">
         <div class="card-body">
@@ -64,7 +63,6 @@
         </div>
       </div>
       <% end %>
-    </div>
   </div>
   <%= paginate @articles %>
 </div><%# container %>
