@@ -269,7 +269,7 @@ h1 {
   border: 1px solid #ccc;
   border-left: 8px solid #1A3263;
   padding: 16px;
-  margin: 18px;
+  margin: 15px 0;
   box-shadow: 2px 2px 4px #ccc;
 }
 // フッター
@@ -302,10 +302,12 @@ footer {
 .pricing .box {
   padding: 20px;
   background: #fff;
-  text-align: center;
   border-radius: 8px;
   position: relative;
   overflow: hidden;
+}
+.pricing .box h4 {
+  text-align: center;
 }
 .section-bg {
   background-color: #f6f8fb;
