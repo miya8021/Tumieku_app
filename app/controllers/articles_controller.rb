@@ -4,9 +4,9 @@ class ArticlesController < ApplicationController
   PER_PAGE = 5
 
   def index
-    @articles = Article.includes(:user, :likes).order(created_at: :desc).page(params[:page]).per(PER_PAGE)
+    @articles = Article.includes(:user, :likes, :comments).order(created_at: :desc).page(params[:page]).per(PER_PAGE)
     @all_ranks = User.all_ranks
-  end
+	end
 
   def new
     @article = Article.new
@@ -28,8 +28,8 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
-    @comments = @article.comments.includes(:user).order(created_at: :desc)
     @comment = Comment.new
+    @comments = @article.comments.includes(:user).order(created_at: :desc)
   end
 
   def edit
@@ -56,7 +56,7 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
-    params.require(:article).permit(:day, :minutes, :body, :exercise_id, :user_id)
+    params.require(:article).permit(:day, :minutes, :body, :exercise_id, :user_id, :comments)
   end
 
   def set_article

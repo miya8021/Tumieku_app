@@ -195,6 +195,15 @@ h1 {
   border-bottom: 1px solid #ccc;
   padding: 8px;
 }
+// 投稿画面のリンク色
+.link {
+	text-decoration: none;
+	color: #212529;
+}
+.link:hover {
+	text-decoration: none;
+	color: #212529;
+}
 // マイページ
 .profile {
   padding: 10px 15px;

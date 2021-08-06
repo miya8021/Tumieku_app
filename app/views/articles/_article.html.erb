@@ -11,6 +11,7 @@
           <h5 class="card-name"><%=link_to "#{article.user.name}", user_path(article.user.id) %></h5>
           <p class="card-text-day"><%= article.day %></p>
         </div>
+        <%= link_to article, class: 'link' do %>
         <div class="row justify-content-start">
           <p>エクササイズ：<%= article.exercise.name %></p>
           <p><%= article.minutes %>分</p>
@@ -20,11 +21,10 @@
         </div>
         <div class="row form-inline justify-content-end">
           <p>
-            <%= link_to article, class: 'nav-link' do %>
-              <i class="material-icons stretched-link">chat_bubble_outline</i>
-            <% end %>
+            <i class="material-icons">chat_bubble_outline</i>
           </p>
-          <p id="article-<%= article.id %>">
+        <% end %>
+          <p class="position-relative" id="article-<%= article.id %>">
             <% if article.liked_by?(current_user) %>
               <%= render "like", post: article %>
             <% else %>
