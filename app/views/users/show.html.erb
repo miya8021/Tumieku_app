@@ -9,19 +9,17 @@
     </div>
     <div class="col-12 col-sm-9 col-lg-9">
       <div class="profile">
-        <div class="row justify-content-between">
-          <h5><%= @user.name %></h5><p>Lv.<%= @user.level %></p>
-          <div class="dropdown drop-hover">
+        <div class="row justify-content-start">
+          <h5><%= @user.name %>   Lv.<%= @user.level %></h5>
+          <ul class="nav-item dropdown">
+          <a class="" href="#" id="navbarDropdown" data-toggle="dropdown">
             <i class="material-icons">more_vert</i>
-            <ul class="dropdown-menu">
-              <li class="dropright drop-hover">
-                <a class="dropdown-item">
-								<%= link_to '編集', edit_user_registration_path, class: 'nav-link' %>
-								<%= link_to "エクササイズ一覧へ", exercises_path, class: 'nav-link' %>
-								</a>
-              </li>
-            </ul>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item"><%= link_to 'マイページ編集', edit_user_registration_path %></a>
+            <a class="dropdown-item"><%= link_to "エクササイズ一覧", exercises_path %></a>
           </div>
+        </ul>
         </div>
         <div class="row justify-content-between">
           <p>
