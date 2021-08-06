@@ -9,7 +9,7 @@
             <%= form.label :day %>
           </div>
           <div class="col-md-9">
-            <%= form.date_field :day, class: 'form-control', required: true %>
+            <%= form.date_field :day, class: 'form-control', value: Time.zone.now.strftime("%Y-%m-%d")%>
           </div>
         </div>
         <div class="form-group row">
