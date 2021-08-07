@@ -12,14 +12,14 @@
         <div class="row justify-content-start">
           <h5><%= @user.name %>   Lv.<%= @user.level %></h5>
           <ul class="nav-item dropdown">
-          <a class="" href="#" id="navbarDropdown" data-toggle="dropdown">
-            <i class="material-icons">more_vert</i>
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item"><%= link_to 'マイページ編集', edit_user_registration_path %></a>
-            <a class="dropdown-item"><%= link_to "エクササイズ一覧", exercises_path %></a>
-          </div>
-        </ul>
+            <a href="#" id="navbarDropdown" data-toggle="dropdown">
+              <i class="material-icons">more_vert</i>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item"><%= link_to 'マイページ編集', edit_user_registration_path %></a>
+              <a class="dropdown-item"><%= link_to "エクササイズ一覧", exercises_path %></a>
+            </div>
+          </ul>
         </div>
         <div class="row justify-content-between">
           <p>
