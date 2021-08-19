@@ -9,16 +9,17 @@
     </div>
     <div class="col-12 col-sm-9 col-lg-9">
       <div class="profile">
-        <div class="row justify-content-between">
-          <h5><%= @user.name %></h5><p>Lv.<%= @user.level %></p>
-          <div class="dropdown drop-hover">
-            <i class="material-icons">more_vert</i>
-            <ul class="dropdown-menu">
-              <li class="dropright drop-hover">
-                <a class="dropdown-item"><%= link_to '編集', edit_user_registration_path, class: 'nav-link' %></a>
-              </li>
-            </ul>
-          </div>
+        <div class="row justify-content-start">
+          <h5><%= @user.name %>   Lv.<%= @user.level %></h5>
+          <ul class="nav-item dropdown">
+            <a href="#" id="navbarDropdown" data-toggle="dropdown">
+              <i class="material-icons">more_vert</i>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item"><%= link_to 'マイページ編集', edit_user_registration_path %></a>
+              <a class="dropdown-item"><%= link_to "エクササイズ一覧", exercises_path %></a>
+            </div>
+          </ul>
         </div>
         <div class="row justify-content-between">
           <p>
@@ -39,24 +40,19 @@
       </div>
     </div>
   </div>
-  <div class="row col">
-    <div class="col col-sm-6">
-      <%= link_to "エクササイズ登録", new_exercise_path, class: 'btn btn-outline-dark rounded-pill' %>
-    </div>
-    <div class="col col-sm-6">
-      <%= render "relationships/new" %>
-    </div>
+  <div class="row justify-content-center">
+    <%= link_to "+今日のTumieku", new_article_path, class: 'btn btn-outline-dark btn-lg rounded-pill' %>
+    <%= render "relationships/new" %>
   </div>
   <div class="text-center">
     <p><i class="material-icons" style="vertical-align:bottom;">wysiwyg</i>あなたの投稿</p>
   </div>
   <div class="container">
-    <div class="col-12">
       <% @articles.each do |article| %>
-      <div class="card-ariticles" style="height: 8rem;">
+      <div class="card-ariticles">
         <div class="card-body">
           <div class="row justify-content-between">
-            <p>エクササイズ : <%= article.exercise.name %> <%= article.minutes %> 分</p>
+            <p>エクササイズ：<%= article.exercise.name %> <%= article.minutes %> 分</p>
             <p><%= article.day %></p>
           </div>
           <div class="row">
@@ -65,7 +61,6 @@
         </div>
       </div>
       <% end %>
-    </div>
   </div>
-  <%= paginate @articles %>
+  <%= paginate @articles, window: 1 %>
 </div><%# container %>

@@ -22,6 +22,8 @@ class User < ApplicationRecord
 
   mount_uploader :profile_image, ImageUploader
 
+  RANK = 3
+
   def followed_by?(user)
     passive_relationships.find_by(following_id: user.id).present?
   end
@@ -32,5 +34,9 @@ class User < ApplicationRecord
       user.name = "ゲストユーザー"
       user.objective = "毎日5分運動する"
     end
+  end
+
+  def self.all_ranks
+    @all_ranks = User.where.not(level: nil).order(level: :desc).limit(RANK).pluck(:id, :name, :level)
   end
 end

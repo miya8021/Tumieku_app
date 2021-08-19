@@ -41,14 +41,17 @@
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalCenterTitle">目標設定のコツ</h5>
+          <h5 class="modal-title" id="exampleModalCenterTitle">目標設定のコツ！</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-        <p>毎日運動を積み上げて、達成したい目標をたてましょう！</p>
-        <p>ポイントは「高すぎる目標」ではなく、「最低限の目標」をたてること</p>
+          <p>達成したい目標をたてましょう！</p>
+          <p>ポイントは「✖高すぎる目標」ではなく、「○最低限の目標」をたてることです。</p>
+          <p>例）</p>
+          <p>✖「毎日ランニング10km」、「毎日、腹筋・腕立て100回」</p>
+          <p>○「毎日５分運動をする」、「毎日、筋トレを10分する」</p>
         </div>
       </div>
     </div>
@@ -60,8 +63,10 @@
     <%= f.file_field :profile_image, accept: "image/png,image/jpeg,image/gif" %>
   </div>
 
+  <%= link_to t('.cancel_my_account'), registration_path(resource_name), data: {confirm: t('.are_you_sure')}, method: :delete, class: 'btn btn-outline-danger' %>
+
   <div class="form-group row justify-content-center">
     <%= f.submit t('.update'), class: 'btn btn-outline-dark btn-lg rounded-pill'%>
-    <%= link_to t('.cancel_my_account'), registration_path(resource_name), data: {confirm: t('.are_you_sure')}, method: :delete, class: 'btn btn-outline-danger btn-lg rounded-pill' %>
+    <%= link_to "もどる", user_path(id: current_user.id), class: 'btn btn-outline-dark btn-lg rounded-pill' %>
   </div>
 <% end %>

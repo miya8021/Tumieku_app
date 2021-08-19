@@ -3,7 +3,7 @@
 </div>
 <div class="container">
   <div class="col-12">
-    <div class="card" style="height: 20rem;">
+    <div class="card" style="width: 100%;">
       <div class="card-body">
         <div class="row justify-content-between">
           <% if @article.user.profile_image? %>
@@ -22,13 +22,21 @@
           <p><%= @article.body %></p>
         </div>
         <div class="row form-inline justify-content-end">
-          <p id="article-<%= @article.id %>">
+          <p class="position-relative" id="article-<%= @article.id %>">
             <% if @article.liked_by?(current_user) %>
               <%= render "like", post: @article %>
             <% else %>
               <%= render "dislike", post: @article %>
             <% end %>
           </p>
+          <% if current_user.id == @article.user_id %>
+            <%= link_to edit_article_path(@article) do %>
+              <p class="material-icons" style="vertical-align:sub;">edit</p>
+            <% end %>
+            <%= link_to article_path(@article), method: :delete, data: { confirm: "削除しますか？" } do %>
+              <p class="material-icons" style="vertical-align:sub;">delete</p>
+            <% end %>
+          <% end %>
         </div>
       </div>
     </div>

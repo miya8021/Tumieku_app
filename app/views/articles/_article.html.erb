@@ -10,19 +10,8 @@
           <% end %>
           <h5 class="card-name"><%=link_to "#{article.user.name}", user_path(article.user.id) %></h5>
           <p class="card-text-day"><%= article.day %></p>
-          <div class="dropdown drop-hover">
-            <i class="material-icons">more_vert</i>
-            <ul class="dropdown-menu">
-              <li class="dropright drop-hover">
-              <a class="dropdown-item"><%= link_to "詳細", article %></a>
-              <% if current_user.id == article.user_id %>
-                <a class="dropdown-item"><%= link_to "編集", edit_article_path(article) %></a>
-                <a class="dropdown-item"><%= link_to "削除", article_path(article), method: :delete, data: { confirm: "削除しますか？" } %></a>
-              <% end %>
-              </li>
-            </ul>
-          </div>
         </div>
+        <%= link_to article, class: 'link' do %>
         <div class="row justify-content-start">
           <p>エクササイズ：<%= article.exercise.name %></p>
           <p><%= article.minutes %>分</p>
@@ -32,11 +21,11 @@
         </div>
         <div class="row form-inline justify-content-end">
           <p>
-            <%= link_to article, class: 'nav-link' do %>
-              <i class="material-icons">chat_bubble_outline</i>
-            <% end %>
+            <i class="material-icons">chat_bubble_outline</i>
+            <%= article.comments.length %>
           </p>
-          <p id="article-<%= article.id %>">
+        <% end %>
+          <p class="position-relative" id="article-<%= article.id %>">
             <% if article.liked_by?(current_user) %>
               <%= render "like", post: article %>
             <% else %>
