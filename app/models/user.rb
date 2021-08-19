@@ -37,6 +37,6 @@ class User < ApplicationRecord
   end
 
   def self.all_ranks
-    @all_ranks = User.order(level: :desc).limit(RANK).pluck(:id, :name, :level)
+    @all_ranks = User.where.not(level: nil).order(level: :desc).limit(RANK).pluck(:id, :name, :level)
   end
 end
