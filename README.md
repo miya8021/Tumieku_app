@@ -21,7 +21,7 @@
 
 ### URL
 
-- URL:https://tumieku-app.herokuapp.com
+- URL:https://tumieku-app.herokuapp.com（※アプリは公開停止いたしました。）
 - ホーム画面・ヘッダーから、ゲストログインボタンで簡単にログインできます。（その他、アカウント登録・ログイン画面でもゲストログインが可能です。）
 
 <img width="600" alt="スクリーンショット 2021-07-26 23.01.19.png" src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/923146/9c7e856c-bd96-01f0-0131-219757d9b427.png">
